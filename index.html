@@ -686,6 +686,38 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   color: #1a5f7a !important;
 }
 </style>
+
+<style>
+:root {
+  --accent: #FF8A3D;
+  --accent-deep: #E2661A;
+  --accent-tint: #FFF1E6;
+}
+/* Primary CTA button */
+a.btn[href="#trial"], .btn[href*="whatsapp"], .btn[href*="wa.me"] {
+  background: linear-gradient(135deg, #FF8A3D, #FF6F3C) !important;
+  color: #fff !important;
+  border: none !important;
+}
+/* Accent tags */
+.eyebrow, .source-note, .chapter-gain {
+  /* keep existing, but highlight gains */
+}
+.chapter-gain {
+  background: var(--accent-tint);
+  color: var(--accent-deep) !important;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+}
+/* Trial section keeps warm tone */
+#trial {
+  background: var(--accent-tint) !important;
+}
+#trial h2 {
+  color: var(--accent-deep) !important;
+}
+</style>
 </head>
 <body>
 
