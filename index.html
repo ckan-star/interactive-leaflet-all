@@ -575,6 +575,21 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   box-sizing: border-box;
 }
 </style>
+
+<style>
+.chapter-gain {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  white-space: normal !important;
+  display: block !important;
+  width: 100% !important;
+  font-size: 14px;
+  color: var(--ok, #2e7d32);
+  margin: 8px 0 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--ok, #2e7d32);
+}
+</style>
 </head>
 <body>
 
@@ -709,7 +724,7 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
         <p>透過提問及提示，協助學生理解題目、選材和安排結構。先選一個方向，看看它會怎樣追問。</p>
         <div class="guide-conversation"><p class="source-note">預設選項式對話示例</p><p><b>引導問題：</b>題目是《放晴了！》，你想寫甚麼？</p><div class="guide-choices"><button type="button" data-idea="weather">雨後景物的變化</button><button type="button" data-idea="mood">由失望變開朗的心情</button></div><p id="guideReply" role="status">選一個方向，看看下一個引導問題。</p></div><div class="guide disclosed-content"><h3 class="disclosure-heading">寫作引導小助手還提供哪些支援？</h3>
           <h4>中文寫作引導小助手</h4>
-          <p class="sub">AI 智能寫作助手 · 一步步引導你完成優質文章</p>
+          <p class="sub" style="text-align:left">寫作引導聊天機器人以對話形式，引導學生思考題目關鍵詞語的意義，協助選材與構思內容。當學生無從下筆時，機器人提供不同切入角度、大綱建議及相關案例。它不只是糾錯工具，更是隨時在線的創意夥伴，助學生擴展思維、理清邏輯，化解「提筆無話可說」的難題。</p>
           <div class="gcards" id="gcards">
             <article class="gcard"><strong>精準審題</strong><span>深入分析題目要求，幫助你準確理解寫作方向，掌握關鍵字和寫作重點</span></article>
             <article class="gcard"><strong>格式檢核</strong><span>根據不同文類提供專業格式指導，確保你的文章符合規範要求</span></article>
