@@ -793,6 +793,31 @@ a.btn[href="#trial"], .btn[href*="whatsapp"], .btn[href*="wa.me"] {
   margin-top: 0;
 }
 </style>
+
+<style>
+/* Unified footer */
+section:has(.brand-details), #contact {
+  background: var(--blue-tint, #F0F1FC) !important;
+  border-top: 1px solid var(--rule);
+}
+section:has(.brand-details) .wrap.more,
+section:has(.brand-details) > .wrap {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+#contact {
+  background: var(--blue-tint, #F0F1FC) !important;
+  margin-top: 0 !important;
+}
+#contact .wrap {
+  background: transparent !important;
+}
+.brand-details, .brand-details .disclosed-content {
+  background: transparent !important;
+  border: none !important;
+}
+</style>
 </head>
 <body>
 
