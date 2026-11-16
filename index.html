@@ -606,6 +606,13 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
 }
 .story-chapter { min-height: auto !important; }
 </style>
+
+<style>
+.role-copy.teacher p { color: #E67E22; }
+.role-copy.student p { color: #3498DB; }
+.role-copy.teacher .chapter-gain { color: #E67E22; border-left-color: #E67E22; }
+.role-copy.student .chapter-gain { color: #3498DB; border-left-color: #3498DB; }
+</style>
 </head>
 <body>
 
@@ -843,70 +850,8 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
 
 <section class="plain faq" id="faq"><div class="wrap"><h2 class="sec-h">常見問答</h2>
 <div class="faq-grid">
-  <button class="flip" aria-pressed="false">
-    <span class="flip-inner">
-      <span class="face front"><b>智愛寫的批改準確嗎？平台支援學校自訂的校本評分標準嗎？</b><br><small>點擊或移上查看</small></span>
-      <span class="face back">智愛寫按本地中文教育課程設計，內建一般寫作、TSA、DSE 及 IGCSE 評分標準，並參考資深中文老師設計的各級批改要點。平台同時支援學校自訂評分準則與權重。AI 批改完成後，老師仍可修改分數與評語。</span>
-    </span>
-  </button>
-  <button class="flip" aria-pressed="false">
-    <span class="flip-inner">
-      <span class="face front"><b>有了人工智能後，學生是否會過度依賴 AI 平台？</b><br><small>點擊或移上查看</small></span>
-      <span class="face back">智愛寫定位為學生的「學伴」，而非「代筆工具」。平台以提問引導學生自主構思，並會評估篇章由 AI 生成或涉嫌抄襲的可能性，供老師參考。</span>
-    </span>
-  </button>
-  <button class="flip" aria-pressed="false">
-    <span class="flip-inner">
-      <span class="face front"><b>引入 AI 工具，如何保證數據安全與教學質量？</b><br><small>點擊或移上查看</small></span>
-      <span class="face back">平台遵循企業級 AI 及網絡數據保護規範，致力保障學生作品與個人資料安全。同時設有多重自動審核機制，並會分析教師調整情況以持續優化。</span>
-    </span>
-  </button>
-</div>
-</div></section>
+  
 
-  <section class="band">
-    <div class="wrap more">
-      <div>
-        <div class="brand-details disclosed-content"><h3 class="disclosure-heading">其他 i-Learner 相關平台</h3>
-        <h4>中文及普通話科平台</h4><p>智愛中文平台 | 智愛文言文平台 | 普通話天地 | 漢語小徑 | 中文開門</p>
-        <h4>英文平台</h4><p>Reading i-Learner | I Love Grammar | Vocabulary i-Learner | Cross-Curricular i-Learner | DSE i-Learner | Writing i-Learner | e-Reader Platform | e-Library Platform</p>
-        <h4>數學平台</h4><p>智愛數學平台</p>
-        <h4>人工智能教學平台</h4><p>Vee AI 全科教學平台 | AI Writing Lab | AI Speaking Lab | 電子家長教室</p></div>
-      </div>
-      <div>
-        <div class="brand-details disclosed-content"><h3 class="disclosure-heading">關於 i-Learner</h3>
-        <p>自2004年創立至今，i-Learner 專注教育科技，陪伴逾600所中小學走過無數個教學的清晨與黃昏。從香港到澳門，從深圳到日本、台灣，我們每年服務近20萬個家庭，成為學校、老師與學生、家長之間一道溫暖、孜孜不倦的橋樑。</p><p class="source-note">以上為 i-Learner 整體服務背景，並非智愛寫的使用學校或成效統計。</p></div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer id="contact">
-  <div class="wrap foot">
-    <div>
-      <h2>索取試用帳號或需要支援？</h2>
-      <p>如有疑問或想安排進一步試用，歡迎聯絡 Christine Kan。</p>
-      <p><a href="tel:90818379">9081 8379</a> · <a href="mailto:ckan@i-learner.com.hk">ckan@i-learner.com.hk</a></p>
-      <div class="top-actions"><a class="btn" href="https://wa.me/85290818379?text=領取中文作文批改平台-智愛寫的試用帳號" style="background:linear-gradient(135deg,#6B74D8,#5A63C9);color:#fff;display:inline-flex;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>免費領取試用帳號</a></div>
-    </div>
-  </div>
-<div style="margin-top:20px;text-align:left"><img src="media/ilearner_logo.png" alt="i-Learner" style="height:28px;width:auto;opacity:.7;vertical-align:middle"> <span style="font-size:13px;opacity:.8"></span></div>
-</footer>
-
-
-<dialog id="productDialog" aria-labelledby="productDialogTitle"><div class="dialog-head"><h2 id="productDialogTitle">實際平台截圖</h2><button type="button" class="btn ghost" id="closeProduct">關閉</button>
-<button class="flip" aria-pressed="false">
-  <span class="flip-inner">
-    <span class="face front"><b>挑戰一：如何兼顧批改效率與教學質素？</b><br><small>點擊或移上查看</small></span>
-    <span class="face back">智愛寫協助老師快速完成基礎批改，讓老師把時間放在教學判斷與個別指導上，同時保留最終評分與評語決定權。</span>
-  </span>
-</button>
-<button class="flip" aria-pressed="false">
-  <span class="flip-inner">
-    <span class="face front"><b>挑戰二：如何讓學生真正學會寫作？</b><br><small>點擊或移上查看</small></span>
-    <span class="face back">平台以提問引導學生自主構思，並提供具體修訂建議與跟進練習，讓學生在反覆修改中看見進步。</span>
-  </span>
-</button>
 </div><img id="productDialogImage" alt="" hidden><p>圖片取自宣傳單張，清晰度受原圖限制。</p></dialog>
 <script>
 (() => {
