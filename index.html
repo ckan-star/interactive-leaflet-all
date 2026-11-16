@@ -966,14 +966,14 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   onScroll();
 })();
 </script>
-<script src="experience.js?v=3?v=landing5"></script>
+<script src="experience.js?v=4"></script>
 <script src="teaching-case.js?v=visible6-autoflow4"></script>
 
 <script>
 document.querySelectorAll('.reveal').forEach(el => {
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-in'); });
-  }, { threshold: 0.15 });
+  }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
   io.observe(el);
 });
 </script>
@@ -1039,7 +1039,7 @@ if (audience) {
         avIO.unobserve(e.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
   avIO.observe(audience);
 }
 </script>
@@ -1059,6 +1059,12 @@ document.querySelectorAll('.flip').forEach(b => {
     b.setAttribute('aria-pressed', on);
   });
 });
+</script>
+
+<script>
+setTimeout(() => {
+  document.querySelectorAll('.reveal:not(.is-in)').forEach(e => e.classList.add('is-in'));
+}, 2000);
 </script>
 </body>
 </html>
