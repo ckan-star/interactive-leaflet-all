@@ -398,12 +398,18 @@ h3 { font-size: var(--fs-h3); line-height: 1.4; }
   }
 }
 </style>
+
+<style>
+@media (max-width: 720px) {
+  .trial-step { grid-template-columns: 1fr !important; }
+}
+</style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="top wrap">
-    <a class="brand" href="#overview" aria-label="智愛寫，返回頁首"><img src="media/zhiai_logo_final.png" alt="智愛寫" style="height:40px;width:auto;vertical-align:middle"></a>
+    <a class="brand" href="#overview" aria-label="智愛寫，返回頁首"><img src="media/zhiai_logo_final.png" alt="智愛寫" style="height:48px;width:auto"></a>
     <div class="top-actions" style="margin-left:auto;display:flex;align-items:center;gap:16px">
       <nav class="top-nav" aria-label="頁內導覽" style="display:flex;gap:16px"><a href="#challenges">平台流程</a><a href="#micro-demo">教學案例</a><a href="#flow-sec">課堂應用</a><a href="#faq">常見問題</a></nav>
       <a class="btn" href="#trial" style="background:#6B74D8;color:#fff">試用指引</a>
@@ -427,7 +433,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.4; }
   
   <a class="btn ghost" href="#challenges">先看示範（免登入）</a>
 </div>
-    </div><div class="hero-evidence" id="hero-film"><div class="film-heading"><h2 id="heroVideoTitle">40 秒，看懂平台流程</h2><span>流程示意 · 無聲影片</span></div><figure class="hero-video" aria-labelledby="heroVideoTitle">
+    </div><div class="hero-evidence" id="hero-film"><div class="film-heading"><h2 id="heroVideoTitle">40 秒，看懂平台流程</h2></div><figure class="hero-video" aria-labelledby="heroVideoTitle">
       <div class="vframe">
         <video id="demoVideo" src="media/demo.mp4" poster="media/demo-poster.jpg" muted playsinline controls preload="metadata" aria-label="智愛寫流程示意影片（無聲）"></video>
         <button type="button" class="vplay" id="vplay" hidden>▶ 播放示範</button>
@@ -438,11 +444,11 @@ h3 { font-size: var(--fs-h3); line-height: 1.4; }
         <li><button type="button" data-t="18">AI 分析與回饋</button></li>
         <li><button type="button" data-t="28">中文寫作引導小助手</button></li>
       </ol>
-    </figure><p class="source-note video-caption">流程示意影片（無聲）；可暫停或點選章節，實際平台截圖見下方。</p></div>
+    </figure><p class="source-note video-caption"></p></div>
   </section>
 
 <section class="plain wrap" id="audience" style="padding:48px 20px">
-  <h2 class="sec-h">為教師而設 · 為學生而設</h2>
+  
   <div class="audience-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:24px">
     <div class="audience-card" style="background:#F7F8FC;border-radius:12px;padding:24px;display:flex;gap:16px;align-items:flex-start">
       <img src="./media/flow/avatar-t.png" alt="老師" width="88" height="88" style="border-radius:50%;object-fit:cover;background:#3FC6CF;flex-shrink:0;display:block">
@@ -466,7 +472,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.4; }
   <p style="text-align:center;margin-top:24px"><a href="#heroVideoTitle" class="text-link">想看實際效果？先看示範 ↓</a></p>
 </section>
 
-  <section class="promise-strip wrap reveal" aria-label="教學重點"><p><b>老師掌握決定權</b>檢視、調整分數與評語</p><p><b>學生參與修改</b>根據提示逐項修訂</p><p><b>回饋接上教學</b>從個人練習到全班分析</p></section>
+  
   <section class="plain reveal" id="challenges">
     <div class="wrap">
       <div class="process-extras"><p class="eyebrow">先看平台怎樣支援寫作教學</p><h2 class="sec-h">從手寫上載，到回饋與寫作引導</h2><p class="section-intro" style="margin-top:-12px;font-size:14px;color:var(--ink-soft)">示範版・不用登入</p><p class="section-intro">先看作文如何轉成文字及回饋，再看看寫作前的引導方式。以下是預設示例。</p>
@@ -599,7 +605,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.4; }
       <div style="display:flex;flex-direction:column;gap:10px;max-width:760px">
         
 <div class="trial-steps" style="display:grid;gap:20px">
-  <div class="trial-step" style="background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:center">
+  <div class="trial-step" style="background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr minmax(240px, 32%);gap:20px;align-items:center">
     <div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
         <div style="width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
@@ -609,7 +615,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.4; }
     </div>
     <img src="./media/trial/home.jpg" alt="平台主頁" style="width:100%;border-radius:8px;border:1px solid var(--rule)">
   </div>
-  <div class="trial-step" style="background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:center">
+  <div class="trial-step" style="background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr minmax(240px, 32%);gap:20px;align-items:center">
     <div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
         <div style="width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700">2</div>
@@ -620,7 +626,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.4; }
     </div>
     <img src="./media/trial/new-topic.jpg" alt="新增寫作題目" style="width:100%;border-radius:8px;border:1px solid var(--rule)">
   </div>
-  <div class="trial-step" style="background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:center">
+  <div class="trial-step" style="background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:20px;display:grid;grid-template-columns:1fr minmax(240px, 32%);gap:20px;align-items:center">
     <div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
         <div style="width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700">3</div>
