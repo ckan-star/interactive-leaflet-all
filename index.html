@@ -540,6 +540,41 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   .hero h1 { font-size: clamp(1.5rem, 6vw, 2.2rem) !important; }
 }
 </style>
+
+<style id="final-fix">
+/* Hero responsive - high specificity */
+#overview.hero {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
+  gap: clamp(16px, 3vw, 40px);
+  padding: clamp(16px, 3vw, 40px) 0;
+  align-items: center;
+}
+#overview h1 { font-size: clamp(1.6rem, 1.1rem + 2.4vw, 2.8rem) !important; line-height: 1.35; }
+#overview .hero-lead { font-size: clamp(1rem, .9rem + .4vw, 1.125rem) !important; }
+#overview .hero-evidence { max-height: none !important; }
+#overview .vframe, #overview .hero-video video {
+  width: 100% !important;
+  aspect-ratio: 16/9;
+  max-height: min(45vh, 400px) !important;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  #overview.hero { grid-template-columns: 1fr !important; }
+}
+
+/* FAQ uniform height + top-aligned text */
+.faq-grid { grid-auto-rows: 1fr; align-items: stretch; }
+.faq-grid .flip, .faq-grid .flip-inner, .faq-grid .face { height: 100%; }
+.faq-grid .face {
+  min-height: 200px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  overflow: auto;
+  box-sizing: border-box;
+}
+</style>
 </head>
 <body>
 
