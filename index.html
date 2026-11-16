@@ -4,8 +4,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>智愛寫 AI互動中文寫作教學平台</title>
-<meta name="description" content="智愛寫⸺專業教師主導開發的AI中文寫作教學平台">
+<title><span class="proper-name">智愛寫</span> AI互動中文寫作教學平台</title>
+<meta name="description" content="<span class="proper-name">智愛寫</span>⸺專業教師主導開發的AI中文寫作教學平台">
 <style>
 /*FONTS-START*/
 
@@ -815,12 +815,20 @@ img[src*="avatar-s"] {
   overflow: hidden;
 }
 </style>
+
+<style>
+.proper-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+</style>
 </head>
 <body>
 
 <header class="topbar">
   <div class="top wrap">
-    <a class="brand" href="#overview" aria-label="智愛寫，返回頁首"><img src="media/zhiai_logo_final.png?v=2" alt="智愛寫" style="height:48px;width:auto"></a>
+    <a class="brand" href="#overview" aria-label="<span class="proper-name">智愛寫</span>，返回頁首"><img src="media/zhiai_logo_final.png?v=2" alt="<span class="proper-name">智愛寫</span>" style="height:48px;width:auto"></a>
     <div class="top-actions" style="margin-left:auto;display:flex;align-items:center;gap:16px">
       <nav class="top-nav" aria-label="頁內導覽" style="display:flex;gap:16px"><a href="#challenges">平台流程</a><a href="#micro-demo">教學案例</a><a href="#flow-sec">課堂應用</a><a href="#faq">常見問題</a></nav>
       <a class="btn" href="#trial" style="background:#3FC6CF;color:#fff">試用指引</a>
@@ -832,11 +840,11 @@ img[src*="avatar-s"] {
 
 <main>
   <section class="hero wrap reveal" id="overview">
-    <div class="hero-copy"><p class="eyebrow">智愛寫 · AI 互動中文寫作教學平台</p>
+    <div class="hero-copy"><p class="eyebrow"><span class="proper-name">智愛寫</span> · AI 互動中文寫作教學平台</p>
       <h1>一篇一篇寫，<br>一句一句改。</h1>
       <p class="hero-lead">寫完即有回饋，老師把關定稿。</p>
       
-      <div class="hero-actions"><a class="btn" href="https://wa.me/85290818379?text=領取中文作文批改平台-智愛寫的試用帳號" style="background:#3FC6CF;color:#fff;margin-right:8px">免費領取試用帳號</a>
+      <div class="hero-actions"><a class="btn" href="https://wa.me/85290818379?text=領取中文作文批改平台-<span class="proper-name">智愛寫</span>的試用帳號" style="background:#3FC6CF;color:#fff;margin-right:8px">免費領取試用帳號</a>
   <div>
     <div class="top-actions"><a class="btn" href="#trial" style="background:#3FC6CF;color:#fff">試用指引</a></div>
     
@@ -846,7 +854,7 @@ img[src*="avatar-s"] {
 </div>
     </div><div class="hero-evidence" id="hero-film"><div class="film-heading"><h2 id="heroVideoTitle">40 秒，看懂平台流程</h2></div><figure class="hero-video" aria-labelledby="heroVideoTitle">
       <div class="vframe">
-        <video id="demoVideo" src="media/demo.mp4" poster="media/demo-poster.jpg" muted playsinline controls preload="metadata" aria-label="智愛寫流程示意影片（無聲）"></video>
+        <video id="demoVideo" src="media/demo.mp4" poster="media/demo-poster.jpg" muted playsinline controls preload="metadata" aria-label="<span class="proper-name">智愛寫</span>流程示意影片（無聲）"></video>
         <button type="button" class="vplay" id="vplay" hidden>▶ 播放示範</button>
       </div>
       <ol class="vsteps" id="vsteps">
@@ -934,18 +942,18 @@ img[src*="avatar-s"] {
 <p class="flow-reading-note">文字及回饋畫面可上下捲動，閱讀完整示例。
 <section class="band" id="flow-sec">
     <div class="wrap">
-      <h2 class="sec-h">如何在寫作教與學中應用智愛寫？</h2>
+      <h2 class="sec-h">如何在寫作教與學中應用<span class="proper-name">智愛寫</span>？</h2>
       
       <nav class="journey-nav" aria-label="教學階段"><a href="#chapter-0" data-chapter-link="0">1 · 課前準備</a><a href="#chapter-1" data-chapter-link="1">2 · 課堂寫作</a><a href="#chapter-2" data-chapter-link="2">3 · 評改回饋</a><a href="#chapter-3" data-chapter-link="3">4 · 反思修訂</a></nav>
       <div class="story-layout"><div class="story-chapters" id="storyChapters"></div><aside class="sticky-showcase" aria-label="目前教學階段的實際畫面"><p class="screen-source">實際平台截圖 · 原始宣傳單張</p><h3 id="showcaseTitle">課前準備</h3><div class="view-controls" role="group" aria-label="展示方式"><button type="button" data-perspective="pair" aria-pressed="true">師生對照</button><button type="button" data-perspective="t" aria-pressed="false">老師畫面</button><button type="button" data-perspective="s" aria-pressed="false">學生畫面</button></div><div id="showcaseImages"></div><p id="showcaseInsight" class="focus-insight" aria-live="polite"></p><button type="button" id="focusScreenshot" class="text-button" aria-pressed="false">聚焦畫面</button><p class="source-note">圖片僅作導覽；點選可放大查看，並非可操作的平台。</p></aside></div>
-      <div class="school"><div><strong>學校應用</strong><p>智愛寫能自動匯總校內學生作文數據，生成報告，為學校制定校本課程、優化教學策略提供科學依據，從宏觀層面提升學校的語文教學質量。</p></div><img src="media/flow/school.jpg" alt="學校應用畫面" width="912" height="254" loading="lazy"></div>
+      <div class="school"><div><strong>學校應用</strong><p><span class="proper-name">智愛寫</span>能自動匯總校內學生作文數據，生成報告，為學校制定校本課程、優化教學策略提供科學依據，從宏觀層面提升學校的語文教學質量。</p></div><img src="media/flow/school.jpg" alt="學校應用畫面" width="912" height="254" loading="lazy"></div>
     </div>
   </section></p>
       </div>
 
       <div class="chal" id="guide">
         <h3 class="chal-h"><span>引導示例</span>無從下筆時，先從一個問題開始</h3>
-        <p><strong>智愛寫的解決方案：</strong><br>智愛寫採用「邊寫邊學」的鷹架（Scaffolding）教學法，陪伴學生逐步深入題目。平台按題目自動生成教學建議，涵蓋關鍵字理解、失分提示、行文結構，為師生提供充足支援。</p>
+        <p><strong><span class="proper-name">智愛寫</span>的解決方案：</strong><br><span class="proper-name">智愛寫</span>採用「邊寫邊學」的鷹架（Scaffolding）教學法，陪伴學生逐步深入題目。平台按題目自動生成教學建議，涵蓋關鍵字理解、失分提示、行文結構，為師生提供充足支援。</p>
         <p>透過提問及提示，協助學生理解題目、選材和安排結構。先選一個方向，看看它會怎樣追問。</p>
         <div class="guide-conversation"><p><b>引導問題：</b>題目是《放晴了！》，你想寫甚麼？</p><div class="guide-choices"><button type="button" data-idea="weather">雨後景物的變化</button><button type="button" data-idea="mood">由失望變開朗的心情</button></div><p id="guideReply" role="status">選一個方向，看看下一個引導問題。</p></div><div class="guide disclosed-content"><h3 class="disclosure-heading">寫作引導小助手還提供哪些支援？</h3>
           <h4>中文寫作引導小助手</h4>
@@ -998,7 +1006,7 @@ img[src*="avatar-s"] {
       
 <div style="background:#fff;border-radius:12px;padding:16px 20px;margin:16px 0 24px;text-align:center;border:1px solid var(--rule)">
   <p style="margin:0 0 8px;font-weight:600">未有試用帳號？</p>
-  <a class="btn" href="https://wa.me/85290818379?text=領取中文作文批改平台-智愛寫的試用帳號" style="background:#3FC6CF;color:#fff;display:inline-flex;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>免費領取試用帳號</a>
+  <a class="btn" href="https://wa.me/85290818379?text=領取中文作文批改平台-<span class="proper-name">智愛寫</span>的試用帳號" style="background:#3FC6CF;color:#fff;display:inline-flex;align-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>免費領取試用帳號</a>
   <p style="margin:8px 0 0;font-size:14px;color:var(--ink-soft)">Christine Kan · <a href="tel:90818379">9081 8379</a> · <a href="mailto:ckan@i-learner.com.hk">ckan@i-learner.com.hk</a></p>
 </div>
 
@@ -1012,7 +1020,7 @@ img[src*="avatar-s"] {
         <div style="width:28px;height:28px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700">1</div>
         <h3 style="margin:0;font-size:17px">先看一篇示範作文的批改</h3>
       </div>
-      <p style="margin:0;font-size:14.5px;color:var(--ink-soft)">請先到網頁 <a href="https://www.i-learner.com.hk" target="_blank" rel="noopener">https://www.i-learner.com.hk</a>，輸入老師的試用賬號，選擇「智愛寫」平台。<br>登入後可選一篇示範作文，查看 AI 批改的回饋內容。</p>
+      <p style="margin:0;font-size:14.5px;color:var(--ink-soft)">請先到網頁 <a href="https://www.i-learner.com.hk" target="_blank" rel="noopener">https://www.i-learner.com.hk</a>，輸入老師的試用賬號，選擇「<span class="proper-name">智愛寫</span>」平台。<br>登入後可選一篇示範作文，查看 AI 批改的回饋內容。</p>
     </div>
     <img src="./media/trial/home.jpg" alt="平台主頁" style="width:100%;border-radius:8px;border:1px solid var(--rule)">
   </div>
@@ -1048,14 +1056,14 @@ img[src*="avatar-s"] {
 <div class="faq-grid">
   <button class="flip" aria-pressed="false">
     <span class="flip-inner">
-      <span class="face front"><b>智愛寫的批改準確嗎？平台支援學校自訂的校本評分標準嗎？</b><br><small>點擊或移上查看</small></span>
-      <span class="face back">智愛寫按本地中文教育課程設計，內建一般寫作、TSA、DSE 及 IGCSE 評分標準，並參考資深中文老師設計的各級批改要點。平台同時支援學校自訂評分準則與權重。AI 批改完成後，老師仍可修改分數與評語。</span>
+      <span class="face front"><b><span class="proper-name">智愛寫</span>的批改準確嗎？平台支援學校自訂的校本評分標準嗎？</b><br><small>點擊或移上查看</small></span>
+      <span class="face back"><span class="proper-name">智愛寫</span>按本地中文教育課程設計，內建一般寫作、TSA、DSE 及 IGCSE 評分標準，並參考資深中文老師設計的各級批改要點。平台同時支援學校自訂評分準則與權重。AI 批改完成後，老師仍可修改分數與評語。</span>
     </span>
   </button>
   <button class="flip" aria-pressed="false">
     <span class="flip-inner">
       <span class="face front"><b>有了人工智能後，學生是否會過度依賴 AI 平台？</b><br><small>點擊或移上查看</small></span>
-      <span class="face back">智愛寫定位為學生的「學伴」，而非「代筆工具」。平台以提問引導學生自主構思，並會評估篇章由 AI 生成或涉嫌抄襲的可能性，供老師參考。</span>
+      <span class="face back"><span class="proper-name">智愛寫</span>定位為學生的「學伴」，而非「代筆工具」。平台以提問引導學生自主構思，並會評估篇章由 AI 生成或涉嫌抄襲的可能性，供老師參考。</span>
     </span>
   </button>
   <button class="flip" aria-pressed="false">
@@ -1097,7 +1105,7 @@ img[src*="avatar-s"] {
       </div>
       <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
         <p style="margin:0"><a href="tel:90818379">9081 8379</a> · <a href="mailto:ckan@i-learner.com.hk">ckan@i-learner.com.hk</a></p>
-        <a class="btn" href="https://wa.me/85290818379?text=領取中文作文批改平台-智愛寫的試用帳號" style="background:#3FC6CF;color:#fff">免費領取試用帳號</a>
+        <a class="btn" href="https://wa.me/85290818379?text=領取中文作文批改平台-<span class="proper-name">智愛寫</span>的試用帳號" style="background:#3FC6CF;color:#fff">免費領取試用帳號</a>
       </div>
     </div>
   </div>
@@ -1154,15 +1162,15 @@ img[src*="avatar-s"] {
   // ---------- 教師端 / 學生端 ----------
   const FLOW = {
     t:{who:"教師端: 中文科黃仲文老師",steps:[
-      ["課前準備",["在老師端輸入題目及確認或修改評改標準","檢視或調整智愛寫生成的課堂討論內容並派發給學生"],"","快速準備寫作指導材料"],
+      ["課前準備",["在老師端輸入題目及確認或修改評改標準","檢視或調整<span class="proper-name">智愛寫</span>生成的課堂討論內容並派發給學生"],"","快速準備寫作指導材料"],
       ["課堂寫作",["按課堂討論建議引導學生審題、取材及構思大綱","讓學生自行上載作文，或由教學人員批量掃描上載*"],"*只需將全班作文掃描為一個PDF，系統自動分頁及辨認學生","課堂討論更有層次，上載模式靈活"],
       ["評改回饋",["檢視生成的評語和評分，可靈活調整","設定「分層批改」，讓學生一次專注改好一兩項","根據學情報告開展針對性教學"],"","批改不再是重擔，回饋質素更高"],
       ["反思修訂",["檢視全班分析簡報，課堂回顧強弱項及分享佳作","派發班本修訂練習及電子版個人練習","請學生提交第二、三次寫作"],"","從數據看見班級變化，帶領學生反思，強化修改能力"]]},
     s:{who:"學生端: 4A 班陳樂思同學",steps:[
       ["課前準備",["登入平台，打開寫作引導機器人及課堂討論內容，進行預習並寫下筆記"],"","動筆前已得到貼身指導，更有信心審題及構思"],
       ["課堂寫作",["參與課堂討論，構思寫作大綱","完成寫作後用手機或平板拍照上載（或由老師批量上載）"],"","有預習鋪墊，課堂參與更投入"],
-      ["評改回饋",["登入智愛寫查看回饋","「分層批改」讓學生逐項改進，輕鬆到位","獲得針對個人弱點的一對一反饋"],"","收到及時、詳細的個人化回饋"],
-      ["反思修訂",["參與課堂反思，討論改進方法，閱讀同學佳作","完成班本及電子版個人修訂練習","提交第二、三次寫作"],"智愛寫記錄長期寫作數據，生成成長報告","獲個人化改進建議，在修訂中看見進步，建立寫作自信"]]}
+      ["評改回饋",["登入<span class="proper-name">智愛寫</span>查看回饋","「分層批改」讓學生逐項改進，輕鬆到位","獲得針對個人弱點的一對一反饋"],"","收到及時、詳細的個人化回饋"],
+      ["反思修訂",["參與課堂反思，討論改進方法，閱讀同學佳作","完成班本及電子版個人修訂練習","提交第二、三次寫作"],"<span class="proper-name">智愛寫</span>記錄長期寫作數據，生成成長報告","獲個人化改進建議，在修訂中看見進步，建立寫作自信"]]}
   };
   // ---------- hero video ----------
   const vid = $("#demoVideo"), vplay = $("#vplay");
