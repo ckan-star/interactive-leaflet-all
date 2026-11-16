@@ -666,6 +666,29 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   .footer-purple .foot-grid { grid-template-columns: 1fr; }
 }
 </style>
+
+<style>
+.footer-clean {
+  background: var(--blue, #6B74D8);
+  color: #fff;
+  padding: 48px 0;
+  margin-top: 40px;
+}
+.footer-clean .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-clean h3 { color: #fff; font-size: 16px; margin-bottom: 12px; }
+.footer-clean .contact h2 { color: #fff; font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.footer-clean p, .footer-clean a { color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.7; }
+@media (max-width: 800px) {
+  .footer-clean .cols { grid-template-columns: 1fr; gap: 28px; }
+}
+</style>
 </head>
 <body>
 
@@ -921,17 +944,7 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   <section class="band">
     <div class="wrap more">
       <div>
-        <div class="footer-purple"><div class="foot-grid"><div class="platforms"><div class="brand-details disclosed-content"><h3 class="disclosure-heading">其他 i-Learner 相關平台</h3>
-        <h4>中文及普通話科平台</h4><p>智愛中文平台 | 智愛文言文平台 | 普通話天地 | 漢語小徑 | 中文開門</p>
-        <h4>英文平台</h4><p>Reading i-Learner | I Love Grammar | Vocabulary i-Learner | Cross-Curricular i-Learner | DSE i-Learner | Writing i-Learner | e-Reader Platform | e-Library Platform</p>
-        <h4>數學平台</h4><p>智愛數學平台</p>
-        <h4>人工智能教學平台</h4><p>Vee AI 全科教學平台 | AI Writing Lab | AI Speaking Lab | 電子家長教室</p></div>
-      </div>
-      <div>
-        </div><div class="right-col"><div class="brand-details disclosed-content"><h3 class="disclosure-heading">關於 i-Learner</h3>
-        <p>自2004年創立至今，i-Learner 專注教育科技，陪伴逾600所中小學走過無數個教學的清晨與黃昏。從香港到澳門，從深圳到日本、台灣，我們每年服務近20萬個家庭，成為學校、老師與學生、家長之間一道溫暖、孜孜不倦的橋樑。</p></div>
-      </div>
-    </div>
+        
   </section>
 </main>
 
