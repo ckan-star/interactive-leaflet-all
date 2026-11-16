@@ -501,6 +501,34 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   padding: 16px 20px;
 }
 </style>
+
+<style>
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
+  gap: clamp(16px, 3vw, 40px);
+  padding: clamp(20px, 4vw, 48px) 0;
+}
+.hero h1 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 3rem); }
+.hero-lead { font-size: clamp(1rem, .9rem + .4vw, 1.125rem); }
+.hero-video video, .vframe {
+  width: 100%;
+  height: auto;
+  max-height: min(52vh, 420px);
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+}
+/* FAQ flip cards */
+.faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 16px; }
+.flip { all: unset; cursor: pointer; perspective: 1000px; display: block; }
+.flip-inner { display: grid; transition: transform .5s; transform-style: preserve-3d; }
+.face { grid-area: 1/1; min-height: 160px; padding: 20px; border-radius: 14px; backface-visibility: hidden; background: #F7F8FC; }
+.back { transform: rotateY(180deg); background: #fff; border: 1px solid #6B74D8; }
+.flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+@media (hover: hover) { .flip:hover .flip-inner { transform: rotateY(180deg); } }
+</style>
 </head>
 <body>
 
@@ -967,6 +995,15 @@ if (audience) {
 document.querySelectorAll('.time-saver .options p').forEach(p => {
   p.addEventListener('mouseenter', () => {
     document.getElementById('timePreview').textContent = p.dataset.preview;
+  });
+});
+</script>
+
+<script>
+document.querySelectorAll('.flip').forEach(b => {
+  b.addEventListener('click', () => {
+    const on = b.classList.toggle('is-flipped');
+    b.setAttribute('aria-pressed', on);
   });
 });
 </script>
