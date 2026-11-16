@@ -802,6 +802,19 @@ img[src*="avatar-t-new"], img[src*="avatar-s-new"],
   aspect-ratio: 1;
 }
 </style>
+
+<style>
+/* Force circular avatars in classroom application */
+.audience-card img,
+.role-banner img,
+img[src*="avatar-t"],
+img[src*="avatar-s"] {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+</style>
 </head>
 <body>
 
