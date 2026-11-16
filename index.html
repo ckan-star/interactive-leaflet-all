@@ -88,8 +88,8 @@ section{scroll-margin-top:72px}
 .stages{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4fr) minmax(0,4fr);gap:16px;align-items:stretch}
 .stage{position:relative;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:16px;overflow:hidden;min-height:470px}
 .stage h4{margin:0 0 10px;font-size:16px;font-weight:700}
-.stage.locked .stage-body{overflow-x:hidden;opacity:0;visibility:hidden}
-.stage.locked::after{content:attr(data-wait);position:absolute;inset:48px 16px 16px;display:grid;place-items:center;border:2px dashed var(--rule);border-radius:8px;color:var(--ink-soft);font-size:15px;text-align:center;padding:12px}
+.stage.locked .stage-body{overflow-x:hidden;opacity:1;visibility:visible}
+.stage.locked::after{display:none}
 .scan-img{display:block;width:100%;height:auto;border:1px solid var(--rule)}
 .scanbar{position:absolute;left:0;right:0;height:70px;top:0;transform:translateY(-80px);background:linear-gradient(to bottom,rgba(30,79,138,0),rgba(30,79,138,.2) 80%,rgba(30,79,138,.6));border-bottom:2px solid var(--blue);pointer-events:none;opacity:0}
 .scanning .scanbar{opacity:1;animation:scan 1.4s ease-in-out forwards}
@@ -717,7 +717,7 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
             <div class="stage-body"><img class="scan-img" src="media/christmas_scan-1.png" alt="《聖誕街景》手寫作文原稿" width="251" height="460"></div>
             <div class="scanbar" aria-hidden="true"></div>
           </div>
-          <div class="stage locked" id="st1" data-wait="下一步：查看辨識後的作文文字">
+          <div class="stage" id="st1" data-wait="下一步：查看辨識後的作文文字">
             <h4>OCR 轉換文字</h4>
             <div class="stage-body ocr" role="region" aria-label="OCR 文字示例，可捲動閱讀" tabindex="0">
               <p><b>《聖誕街景》</b></p>
@@ -727,7 +727,7 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
               <p>接着那幾個小時，我們都是這邊走走，那邊逛逛。時間也過得真快，轉眼間，已經九點半了，我們也得走了，我依依不捨地抬頭凝視掛在廣場透明的玻璃頂的奪目燈飾，它們一閃一閃的，我想，它們應該象徵着每個人來年的盼望吧！</p>
             </div>
           </div>
-          <div class="stage locked" id="st2" data-wait="最後：查看示例評分與修改建議">
+          <div class="stage" id="st2" data-wait="最後：查看示例評分與修改建議">
             <h4>AI 分析與回饋</h4>
             <div class="stage-body" role="region" aria-label="分析與回饋示例，可捲動閱讀" tabindex="0">
               <p class="source-note">結構示例分數（非總分）；各範疇以 100 分展示。</p><div class="score">
