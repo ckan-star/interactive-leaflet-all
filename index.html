@@ -577,7 +577,7 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
 </style>
 
 <style>
-.chapter-gain {
+.chapter-gain { background: #fff !important;
   writing-mode: horizontal-tb !important;
   text-orientation: mixed !important;
   white-space: normal !important;
@@ -592,7 +592,7 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
 </style>
 
 <style>
-.role-copy .chapter-gain {
+.role-copy .chapter-gain { background: #fff !important;
   grid-column: 2 !important;
   writing-mode: horizontal-tb !important;
   text-orientation: mixed !important;
@@ -608,10 +608,10 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
 </style>
 
 <style>
-.role-copy.teacher p, .role-copy.teacher .chapter-gain { color: var(--blue); }
-.role-copy.student p, .role-copy.student .chapter-gain { color: var(--ink-soft); }
-.role-copy.teacher .chapter-gain { border-left-color: var(--blue); }
-.role-copy.student .chapter-gain { border-left-color: var(--grid, #ddd); }
+.role-copy.teacher p, .role-copy.teacher .chapter-gain { background: #fff !important; color: var(--blue); }
+.role-copy.student p, .role-copy.student .chapter-gain { background: #fff !important; color: var(--ink-soft); }
+.role-copy.teacher .chapter-gain { background: #fff !important; border-left-color: var(--blue); }
+.role-copy.student .chapter-gain { background: #fff !important; border-left-color: var(--grid, #ddd); }
 </style>
 
 <style>
@@ -678,11 +678,11 @@ body, p { font-size: var(--fs-body); line-height: 1.7; }
   margin: 8px 0;
 }
 .role-copy.teacher p,
-.role-copy.teacher .chapter-gain {
+.role-copy.teacher .chapter-gain { background: #fff !important;
   color: #8a4b16 !important;
 }
 .role-copy.student p,
-.role-copy.student .chapter-gain {
+.role-copy.student .chapter-gain { background: #fff !important;
   color: #1a5f7a !important;
 }
 </style>
@@ -700,11 +700,11 @@ a.btn[href="#trial"], .btn[href*="whatsapp"], .btn[href*="wa.me"] {
   border: none !important;
 }
 /* Accent tags */
-.eyebrow, .source-note, .chapter-gain {
+.eyebrow, .source-note, .chapter-gain { background: #fff !important;
   /* keep existing, but highlight gains */
 }
-.chapter-gain {
-  background: var(--accent-tint);
+.chapter-gain { background: #fff !important;
+  background: #fff;
   color: var(--accent-deep) !important;
   padding: 4px 10px;
   border-radius: 6px;
