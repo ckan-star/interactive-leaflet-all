@@ -827,6 +827,20 @@ img[src*="avatar-s"] {
 <style>
 #audience { margin-top: 24px !important; }
 </style>
+
+<style>
+.flow6{list-style:none;margin:16px 0;padding:0;display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory}
+.flow6 button{flex:1;min-width:80px;border:0;background:transparent;border-top:3px solid var(--rule);padding:8px 4px 0;font-size:13px;color:var(--ink-soft);cursor:pointer;scroll-snap-align:center}
+.flow6 button[aria-current="step"]{color:var(--ink);font-weight:600;border-top-color:var(--red)}
+.flow-panel{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;align-items:center;margin-top:16px}
+.step-content[hidden]{display:none}
+.step-text h4{margin:0 0 8px;font-size:18px}
+.gain{color:#8a4b16;font-size:14px;margin-top:8px}
+.shot{margin:0;background:#EEF0FB;border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot figcaption{font-size:12px;color:var(--ink-soft);padding:8px;text-align:center}
+@media(max-width:768px){.flow-panel{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -901,58 +915,70 @@ img[src*="avatar-s"] {
       <div class="process-extras"><p class="eyebrow">先看平台怎樣支援寫作教學</p><h2 class="sec-h">從手寫上載，到回饋與寫作引導</h2><p class="section-intro" style="margin-top:-12px;font-size:14px;color:var(--ink-soft)">示範版・不用登入</p><p class="section-intro">先看作文如何轉成文字及回饋，再看看寫作前的引導方式。以下是預設示例。</p>
 
       <div class="chal" id="try">
-        <h3 class="chal-h"><span>流程示範</span>手寫作文如何走到批改回饋</h3>
-        <p>學生上載手寫作文，平台辨識成文字並提供回饋。老師再審閱及調整，將批改結果用於課堂跟進。</p>
+        <h3 class="chal-h"><span>流程示範</span>從出題到跟進的完整寫作流程</h3>
+        <p>老師佈置題目、學生與小助手構思、拍照上載、OCR 轉文字、老師批改定稿，再到跟進練習。以下為示範。</p>
 
-        <p class="source-note">示範動畫，非即時批改。</p><ol class="flow3" id="flow3" aria-label="批改流程">
-          <li><button type="button" data-stage="0" aria-current="step"><b>1</b>原稿掃描 / 上傳</button></li>
-          <li><button type="button" data-stage="1" disabled><b>2</b>OCR 轉換文字</button></li>
-          <li><button type="button" data-stage="2" disabled><b>3</b>AI 分析與回饋</button></li>
+        <ol class="flow6" id="flow6" aria-label="六步寫作流程">
+          <li><button type="button" data-step="0" aria-current="step">① 出題</button></li>
+          <li><button type="button" data-step="1">② 寫前引導</button></li>
+          <li><button type="button" data-step="2">③ 落筆寫作</button></li>
+          <li><button type="button" data-step="3">④ 轉成文字</button></li>
+          <li><button type="button" data-step="4">⑤ 批改把關</button></li>
+          <li><button type="button" data-step="5">⑥ 跟進提升</button></li>
         </ol>
-        <div class="demo-ctl" aria-label="自動流程示範控制"><button type="button" class="btn" id="nextBtn">播放完整流程示範</button><button type="button" class="btn ghost" id="resetBtn" hidden>停止並重設</button><p id="flowStatus" role="status">按一次，自動示範掃描、文字辨識及分析回饋。</p></div>
-        <div class="stages" id="stages" aria-busy="false">
-          <div class="stage" id="st0">
-            <h4>原稿掃描 / 上傳</h4>
-            <div class="stage-body"><img class="scan-img" src="media/christmas_scan-1.png" alt="《聖誕街景》手寫作文原稿" width="251" height="460"></div>
-            <div class="scanbar" aria-hidden="true"></div>
-          </div>
-          <div class="stage locked" id="st1" data-wait="下一步：查看辨識後的作文文字">
-            <h4>OCR 轉換文字</h4>
-            <div class="stage-body ocr" role="region" aria-label="OCR 文字示例，可捲動閱讀" tabindex="0">
-              <p><b>《聖誕街景》</b></p>
-              <p>「姐姐！你看，這棵聖誕樹多高，簡直可以穿過雲層！」弟弟興高采烈地指着希慎廣場裏那棵閃閃發光的聖誕樹。廣場門口立着一棵聖誕樹，彷彿迎接我們的來臨。五顏六色的裝飾在深綠的樹葉特別顯眼。除此之外，樹的頂部還插着一顆發光的小星星。</p>
-              <p>望向左邊，有一支聖誕合唱團在唱着輕快的音樂。他們身穿紅衣、頭戴紅帽，連鞋子也是紅色的。歌曲唱完了，雷鳴般的掌聲響滿廣場。合唱團的旁邊有一個小丑幫小朋友們扭氣球，這邊一隻小兔子，那邊一隻貓，把平平無奇的氣球扭成栩栩如生的小動物，真是令我大開眼界。</p>
-              <p>右邊的美食攤擋傳來一陣香香的雞蛋仔香味。仔細一看，嘩！不但有裝飾華麗的聖誕曲奇餅，還有從日本北海道直送來香港的新鮮牛乳。售貨員熱情地遞我一塊小餅乾試試，餅乾脆脆的，上面有一層甜甜的奶油，真好吃！</p>
-              <p>接着那幾個小時，我們都是這邊走走，那邊逛逛。時間也過得真快，轉眼間，已經九點半了，我們也得走了，我依依不捨地抬頭凝視掛在廣場透明的玻璃頂的奪目燈飾，它們一閃一閃的，我想，它們應該象徵着每個人來年的盼望吧！</p>
+
+        <div class="demo-ctl"><button type="button" class="btn" id="playFlow">播放完整流程示範</button><button type="button" class="btn ghost" id="resetFlow" hidden>停止並重設</button><p id="flowStatus" role="status">按一次，逐步展示完整流程。</p></div>
+
+        <div class="flow-panel" id="flowPanel">
+          <div class="step-content" data-step="0">
+            <div class="step-text">
+              <h4>① 出題</h4>
+              <p>老師選題或自訂題目，選擇評分標準（TSA／DSE／IGCSE／校本），AI 生成寫作筆記與圖片並派發給學生。</p>
+              <p class="gain">成效：快速準備寫作指導材料</p>
             </div>
+            <figure class="shot"><img src="media/flow/demo-1.png" alt="老師佈置題目示範" loading="lazy"><figcaption>示範：評分標準選單與筆記預覽</figcaption></figure>
           </div>
-          <div class="stage locked" id="st2" data-wait="最後：查看示例評分與修改建議">
-            <h4>AI 分析與回饋</h4>
-            <div class="stage-body" role="region" aria-label="分析與回饋示例，可捲動閱讀" tabindex="0">
-              <p class="source-note">結構示例分數（非總分）；各範疇以 100 分展示。</p><div class="score">
-                <div class="ring" id="ring" aria-label="結構示例分數"><span id="ringNum">0</span></div>
-                <div class="bars">
-                  <div><span>結構</span><span>82/100</span><i><b data-w="82" style="background:var(--red)"></b></i></div>
-                  <div><span>內容</span><span>78/100</span><i><b data-w="78" style="background:var(--orange)"></b></i></div>
-                  <div><span>語言</span><span>70/100</span><i><b data-w="70" style="background:var(--amber)"></b></i></div>
-                </div>
-              </div>
-              <div class="tabs" aria-label="示例報告內容標籤，非切換按鈕"><span class="on">綜合說明</span><span>結構 82</span><span>內容 78</span><span>語言 70</span><span>建議 5</span></div>
-              <p class="summary">本文能緊扣《聖誕街景》的主題，嘗試運用多感官描寫手法展現節日的熱鬧氣氛，方向正確。然而，文章的主要限制在於語言成熟度不足與描寫流於表面。大量使用「香香的」、「脆脆的」等小學程度疊詞，使文風顯得幼稚；同時，空間佈局（左、右）機械，段落間缺乏內在的情感或邏輯推進，結尾的象徵抒發也略顯生硬。若能提升詞彙的豐富度，並深化感官細節的刻劃，文章質素將有顯著提升。</p>
+          <div class="step-content" data-step="1" hidden>
+            <div class="step-text">
+              <h4>② 寫前引導</h4>
+              <p>學生與 AI 寫作小助手對話，討論解題、選材、結構、修辭與升華，對話後生成寫作大綱。</p>
+              <p class="gain">成效：動筆前已有清晰方向</p>
             </div>
+            <figure class="shot"><img src="media/flow/demo-2.png" alt="AI 小助手對話示範" loading="lazy"><figcaption>示範：與小助手討論大綱</figcaption></figure>
+          </div>
+          <div class="step-content" data-step="2" hidden>
+            <div class="step-text">
+              <h4>③ 落筆寫作</h4>
+              <p>學生完成寫作後，用手機或平板拍照上載手寫作文（或由老師批量掃描上載）。</p>
+              <p class="gain">成效：上載模式靈活</p>
+            </div>
+            <figure class="shot"><img src="media/christmas_scan-1.png" alt="手寫作文原稿" loading="lazy"><figcaption>示範：手寫原稿掃描</figcaption></figure>
+          </div>
+          <div class="step-content" data-step="3" hidden>
+            <div class="step-text">
+              <h4>④ 轉成文字</h4>
+              <p>平台自動辨識手寫文字，轉成可批改的電子文字，供老師與學生核對。</p>
+              <p class="gain">成效：省去逐字輸入時間</p>
+            </div>
+            <figure class="shot"><img src="media/flow/demo-4.png" alt="OCR 轉換示範" loading="lazy"><figcaption>示範：原稿與文字對照</figcaption></figure>
+          </div>
+          <div class="step-content" data-step="4" hidden>
+            <div class="step-text">
+              <h4>⑤ 批改把關</h4>
+              <p>AI 先分析並在原文加批註，老師再審閱、調整分數與評語，可自行加註，最後定稿發還學生。</p>
+              <p class="gain">成效：批改不再是重擔，回饋質素更高</p>
+            </div>
+            <figure class="shot"><img src="media/flow/demo-5.png" alt="批改與批註示範" loading="lazy"><figcaption>示範：原文批註與綜合評價</figcaption></figure>
+          </div>
+          <div class="step-content" data-step="5" hidden>
+            <div class="step-text">
+              <h4>⑥ 跟進提升</h4>
+              <p>老師查看全班跟進報告，AI 根據學情生成個人與班級修訂練習，安排再次寫作。</p>
+              <p class="gain">成效：從數據看見進步，強化修改能力</p>
+            </div>
+            <figure class="shot"><img src="media/flow/demo-6.png" alt="跟進報告示範" loading="lazy"><figcaption>示範：全班報告與個人練習</figcaption></figure>
           </div>
         </div>
-
-<p class="flow-reading-note">文字及回饋畫面可上下捲動，閱讀完整示例。
-<section class="band" id="flow-sec">
-    <div class="wrap">
-      <h2 class="sec-h">如何在寫作教與學中應用智愛寫？</h2>
-      
-      <nav class="journey-nav" aria-label="教學階段"><a href="#chapter-0" data-chapter-link="0">1 · 課前準備</a><a href="#chapter-1" data-chapter-link="1">2 · 課堂寫作</a><a href="#chapter-2" data-chapter-link="2">3 · 評改回饋</a><a href="#chapter-3" data-chapter-link="3">4 · 反思修訂</a></nav>
-      <div class="story-layout"><div class="story-chapters" id="storyChapters"></div><aside class="sticky-showcase" aria-label="目前教學階段的實際畫面"><p class="screen-source">實際平台截圖 · 原始宣傳單張</p><h3 id="showcaseTitle">課前準備</h3><div class="view-controls" role="group" aria-label="展示方式"><button type="button" data-perspective="pair" aria-pressed="true">師生對照</button><button type="button" data-perspective="t" aria-pressed="false">老師畫面</button><button type="button" data-perspective="s" aria-pressed="false">學生畫面</button></div><div id="showcaseImages"></div><p id="showcaseInsight" class="focus-insight" aria-live="polite"></p><button type="button" id="focusScreenshot" class="text-button" aria-pressed="false">聚焦畫面</button><p class="source-note">圖片僅作導覽；點選可放大查看，並非可操作的平台。</p></aside></div>
-      <div class="school"><div><strong>學校應用</strong><p>智愛寫能自動匯總校內學生作文數據，生成報告，為學校制定校本課程、優化教學策略提供科學依據，從宏觀層面提升學校的語文教學質量。</p></div><img src="media/flow/school.jpg" alt="學校應用畫面" width="912" height="254" loading="lazy"></div>
-    </div>
-  </section></p>
       </div>
 
       <div class="chal" id="guide">
@@ -1305,6 +1331,28 @@ document.querySelectorAll('.flip').forEach(b => {
 setTimeout(() => {
   document.querySelectorAll('.reveal:not(.is-in)').forEach(e => e.classList.add('is-in'));
 }, 2000);
+</script>
+
+<script>
+(function(){
+  const btns = document.querySelectorAll('#flow6 button');
+  const panels = document.querySelectorAll('.step-content');
+  const status = document.getElementById('flowStatus');
+  let current = 0;
+  function go(i){
+    current = i;
+    btns.forEach((b,idx)=>{ b.setAttribute('aria-current', idx===i ? 'step' : 'false'); });
+    panels.forEach((p,idx)=>{ p.hidden = idx !== i; });
+    status.textContent = (i+1) + ' / 6：' + btns[i].textContent.trim();
+  }
+  btns.forEach(b => b.addEventListener('click', () => go(+b.dataset.step)));
+  document.getElementById('playFlow').addEventListener('click', () => {
+    let i = 0;
+    const t = setInterval(() => { go(i); i++; if(i>5) clearInterval(t); }, 1800);
+  });
+  document.getElementById('resetFlow').addEventListener('click', () => go(0));
+  go(0);
+})();
 </script>
 </body>
 </html>
