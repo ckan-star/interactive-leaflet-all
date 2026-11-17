@@ -1383,8 +1383,13 @@ setTimeout(() => {
   function go(i){
     current = i;
     btns.forEach((b,idx)=>{ b.setAttribute('aria-current', idx===i ? 'step' : 'false'); });
-    panels.forEach((p,idx)=>{ p.hidden = idx !== i; });
-    status.textContent = (i+1) + ' / 6：' + btns[i].textContent.trim();
+    const isMobile = window.matchMedia('(max-width:900px)').matches;
+    if(isMobile){
+      panels.forEach((p,idx)=>{ p.hidden = idx !== i; });
+    } else {
+      panels.forEach(p => p.hidden = false);
+    }
+    if(status) status.textContent = (i+1) + ' / 6：' + btns[i].textContent.trim();
   }
   btns.forEach(b => b.addEventListener('click', () => go(+b.dataset.step)));
   document.getElementById('playFlow').addEventListener('click', () => {
