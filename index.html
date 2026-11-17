@@ -847,6 +847,12 @@ img[src*="avatar-s"] {
 }
 
 </style>
+
+<style>
+@media(max-width:800px){
+  #try{grid-template-columns:1fr !important}
+}
+</style>
 </head>
 <body>
 
@@ -920,9 +926,12 @@ img[src*="avatar-s"] {
     <div class="wrap">
       <div class="process-extras"><p class="eyebrow">先看平台怎樣支援寫作教學</p><h2 class="sec-h">從手寫上載，到回饋與寫作引導</h2><p class="section-intro" style="margin-top:-12px;font-size:14px;color:var(--ink-soft)">示範版・不用登入</p><p class="section-intro">先看作文如何轉成文字及回饋，再看看寫作前的引導方式。以下是預設示例。</p>
 
-      <div class="chal" id="try">
+      <div class="chal" id="try" style="display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:start">
+        <div>
         <h3 class="chal-h"><span>流程示範</span>從出題到跟進的完整寫作流程</h3>
         <p>老師佈置題目、學生與小助手構思、拍照上載、OCR 轉文字、老師批改定稿，再到跟進練習。以下為示範。</p>
+        </div>
+        <div>
 
         <ol class="flow6" id="flow6" aria-label="六步寫作流程">
           <li><button type="button" data-step="0" aria-current="step">① 出題</button></li>
@@ -987,6 +996,7 @@ img[src*="avatar-s"] {
             </div>
             <figure class="shot"><img src="media/flow/demo-6.png" alt="跟進報告示範" loading="lazy"><figcaption>示範：全班報告與個人練習</figcaption></figure>
           </div>
+        </div>
         </div>
       </div>
 
