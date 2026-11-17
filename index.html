@@ -832,14 +832,23 @@ img[src*="avatar-s"] {
 .flow6{list-style:none;margin:16px 0;padding:0;display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory}
 .flow6 button{flex:1;min-width:80px;border:0;background:transparent;border-top:3px solid var(--rule);padding:8px 4px 0;font-size:13px;color:var(--ink-soft);cursor:pointer;scroll-snap-align:center}
 .flow6 button[aria-current="step"]{color:var(--ink);font-weight:600;border-top-color:var(--red)}
-.flow-panel{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;align-items:center;margin-top:16px}
-.step-content[hidden]{display:none}
-.step-text h4{margin:0 0 8px;font-size:18px}
-.gain{color:#8a4b16;font-size:14px;margin-top:8px}
-.shot{margin:0;background:#EEF0FB;border-radius:12px;overflow:hidden;aspect-ratio:16/10}
+.flow-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px}
+.step-content{display:flex;flex-direction:column;gap:8px}
+.step-content[hidden]{display:flex}
+.step-text h4{margin:0 0 6px;font-size:16px}
+.gain{color:#8a4b16;font-size:13px;margin-top:4px}
+.shot{margin:0;background:#EEF0FB;border-radius:10px;overflow:hidden;aspect-ratio:16/10}
 .shot img{width:100%;height:100%;object-fit:cover;display:block}
-.shot figcaption{font-size:12px;color:var(--ink-soft);padding:8px;text-align:center}
-@media(max-width:768px){.flow-panel{grid-template-columns:1fr}}
+.shot figcaption{font-size:11px;color:var(--ink-soft);padding:6px;text-align:center}
+@media(max-width:900px){
+  .flow-panel{grid-template-columns:1fr}
+  .step-content[hidden]{display:none}
+  .flow6{display:flex}
+}
+@media(min-width:901px){
+  .flow6{display:none}
+  .demo-ctl{display:none}
+}
 </style>
 </head>
 <body>
@@ -938,7 +947,7 @@ img[src*="avatar-s"] {
             </div>
             <figure class="shot"><img src="media/flow/demo-1.png" alt="老師佈置題目示範" loading="lazy"><figcaption>示範：評分標準選單與筆記預覽</figcaption></figure>
           </div>
-          <div class="step-content" data-step="1" hidden>
+          <div class="step-content" data-step="1">
             <div class="step-text">
               <h4>② 寫前引導</h4>
               <p>學生與 AI 寫作小助手對話，討論解題、選材、結構、修辭與升華，對話後生成寫作大綱。</p>
@@ -946,7 +955,7 @@ img[src*="avatar-s"] {
             </div>
             <figure class="shot"><img src="media/flow/demo-2.png" alt="AI 小助手對話示範" loading="lazy"><figcaption>示範：與小助手討論大綱</figcaption></figure>
           </div>
-          <div class="step-content" data-step="2" hidden>
+          <div class="step-content" data-step="2">
             <div class="step-text">
               <h4>③ 落筆寫作</h4>
               <p>學生完成寫作後，用手機或平板拍照上載手寫作文（或由老師批量掃描上載）。</p>
@@ -954,23 +963,26 @@ img[src*="avatar-s"] {
             </div>
             <figure class="shot"><img src="media/christmas_scan-1.png" alt="手寫作文原稿" loading="lazy"><figcaption>示範：手寫原稿掃描</figcaption></figure>
           </div>
-          <div class="step-content" data-step="3" hidden>
+          <div class="step-content" data-step="3">
             <div class="step-text">
               <h4>④ 轉成文字</h4>
               <p>平台自動辨識手寫文字，轉成可批改的電子文字，供老師與學生核對。</p>
               <p class="gain">成效：省去逐字輸入時間</p>
             </div>
-            <figure class="shot"><img src="media/flow/demo-4.png" alt="OCR 轉換示範" loading="lazy"><figcaption>示範：原稿與文字對照</figcaption></figure>
+            <figure class="shot"><img src="media/flow/demo-4.png" alt="OCR 轉換示範" loading="lazy"><figcaption>示範：原稿與文字對照</figcaption></figure><div class="ocr-preview" style="font-size:12px;line-height:1.6;max-height:160px;overflow:auto;background:#fff;padding:8px;border-radius:6px">
+<p><b>《聖誕街景》</b></p>
+<p>「姐姐！你看，這棵聖誕樹多高……」弟弟興高采烈地指着希慎廣場裏那棵閃閃發光的聖誕樹。……（示範節錄）</p>
+</div>
           </div>
-          <div class="step-content" data-step="4" hidden>
+          <div class="step-content" data-step="4">
             <div class="step-text">
               <h4>⑤ 批改把關</h4>
               <p>AI 先分析並在原文加批註，老師再審閱、調整分數與評語，可自行加註，最後定稿發還學生。</p>
               <p class="gain">成效：批改不再是重擔，回饋質素更高</p>
             </div>
-            <figure class="shot"><img src="media/flow/demo-5.png" alt="批改與批註示範" loading="lazy"><figcaption>示範：原文批註與綜合評價</figcaption></figure>
+            <figure class="shot"><img src="media/flow/demo-5.png" alt="批改與批註示範" loading="lazy"><figcaption>示範：原文批註與綜合評價</figcaption></figure><p style="font-size:12px;color:var(--ink-soft);margin:6px 0 0">綜合評價：緊扣主題，但疊詞較多，可提升詞彙豐富度。（示範）</p>
           </div>
-          <div class="step-content" data-step="5" hidden>
+          <div class="step-content" data-step="5">
             <div class="step-text">
               <h4>⑥ 跟進提升</h4>
               <p>老師查看全班跟進報告，AI 根據學情生成個人與班級修訂練習，安排再次寫作。</p>
