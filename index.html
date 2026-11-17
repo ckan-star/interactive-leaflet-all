@@ -832,9 +832,9 @@ img[src*="avatar-s"] {
 .flow6{list-style:none;margin:16px 0;padding:0;display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory}
 .flow6 button{flex:1;min-width:80px;border:0;background:transparent;border-top:3px solid var(--rule);padding:8px 4px 0;font-size:13px;color:var(--ink-soft);cursor:pointer;scroll-snap-align:center}
 .flow6 button[aria-current="step"]{color:var(--ink);font-weight:600;border-top-color:var(--red)}
-.flow-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px}
+.flow-panel{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;align-items:center;margin-top:16px}
 .step-content{display:flex;flex-direction:column;gap:8px}
-.step-content[hidden]{display:flex}
+.step-content[hidden]{display:none}
 .step-text h4{margin:0 0 6px;font-size:16px}
 .gain{color:#8a4b16;font-size:13px;margin-top:4px}
 .shot{margin:0;background:#EEF0FB;border-radius:10px;overflow:hidden;aspect-ratio:16/10}
@@ -845,10 +845,7 @@ img[src*="avatar-s"] {
   .step-content[hidden]{display:none}
   .flow6{display:flex}
 }
-@media(min-width:901px){
-  .flow6{display:none}
-  .demo-ctl{display:none}
-}
+
 </style>
 </head>
 <body>
@@ -1383,12 +1380,7 @@ setTimeout(() => {
   function go(i){
     current = i;
     btns.forEach((b,idx)=>{ b.setAttribute('aria-current', idx===i ? 'step' : 'false'); });
-    const isMobile = window.matchMedia('(max-width:900px)').matches;
-    if(isMobile){
-      panels.forEach((p,idx)=>{ p.hidden = idx !== i; });
-    } else {
-      panels.forEach(p => p.hidden = false);
-    }
+    panels.forEach((p,idx)=>{ p.hidden = idx !== i; });
     if(status) status.textContent = (i+1) + ' / 6：' + btns[i].textContent.trim();
   }
   btns.forEach(b => b.addEventListener('click', () => go(+b.dataset.step)));
