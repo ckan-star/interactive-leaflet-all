@@ -847,6 +847,13 @@ img[src*="avatar-s"] {
 }
 
 </style>
+
+<style>
+@media(max-width:800px){
+  #try{grid-template-columns:1fr !important}
+}
+.step-text[hidden]{display:none}
+</style>
 </head>
 <body>
 
@@ -920,77 +927,62 @@ img[src*="avatar-s"] {
     <div class="wrap">
       <div class="process-extras"><p class="eyebrow">先看平台怎樣支援寫作教學</p><h2 class="sec-h">從手寫上載，到回饋與寫作引導</h2><p class="section-intro" style="margin-top:-12px;font-size:14px;color:var(--ink-soft)">示範版・不用登入</p><p class="section-intro">先看作文如何轉成文字及回饋，再看看寫作前的引導方式。以下是預設示例。</p>
 
-      <div class="chal" id="try">
-        <h3 class="chal-h"><span>流程示範</span>從出題到跟進的完整寫作流程</h3>
-        <p>老師佈置題目、學生與小助手構思、拍照上載、OCR 轉文字、老師批改定稿，再到跟進練習。以下為示範。</p>
+      <div class="chal" id="try" style="display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start">
+        <div class="flow-left">
+          <h3 class="chal-h"><span>流程示範</span>從出題到跟進的完整寫作流程</h3>
+          <p>老師佈置題目、學生與小助手構思、拍照上載、OCR 轉文字、老師批改定稿，再到跟進練習。以下為示範。</p>
 
-        <ol class="flow6" id="flow6" aria-label="六步寫作流程">
-          <li><button type="button" data-step="0" aria-current="step">① 出題</button></li>
-          <li><button type="button" data-step="1">② 寫前引導</button></li>
-          <li><button type="button" data-step="2">③ 落筆寫作</button></li>
-          <li><button type="button" data-step="3">④ 轉成文字</button></li>
-          <li><button type="button" data-step="4">⑤ 批改把關</button></li>
-          <li><button type="button" data-step="5">⑥ 跟進提升</button></li>
-        </ol>
+          <ol class="flow6" id="flow6" aria-label="六步寫作流程">
+            <li><button type="button" data-step="0" aria-current="step">① 出題</button></li>
+            <li><button type="button" data-step="1">② 寫前引導</button></li>
+            <li><button type="button" data-step="2">③ 落筆寫作</button></li>
+            <li><button type="button" data-step="3">④ 轉成文字</button></li>
+            <li><button type="button" data-step="4">⑤ 批改把關</button></li>
+            <li><button type="button" data-step="5">⑥ 跟進提升</button></li>
+          </ol>
 
-        <div class="demo-ctl"><button type="button" class="btn" id="playFlow">播放完整流程示範</button><button type="button" class="btn ghost" id="resetFlow" hidden>停止並重設</button><p id="flowStatus" role="status">按一次，逐步展示完整流程。</p></div>
+          <div class="demo-ctl"><button type="button" class="btn" id="playFlow">播放完整流程示範</button><button type="button" class="btn ghost" id="resetFlow" hidden>停止並重設</button><p id="flowStatus" role="status">按一次，逐步展示完整流程。</p></div>
 
-        <div class="flow-panel" id="flowPanel">
-          <div class="step-content" data-step="0">
-            <div class="step-text">
+          <div class="step-texts" id="stepTexts">
+            <div class="step-text" data-step="0">
               <h4>① 出題</h4>
               <p>老師選題或自訂題目，選擇評分標準（TSA／DSE／IGCSE／校本），AI 生成寫作筆記與圖片並派發給學生。</p>
               <p class="gain">成效：快速準備寫作指導材料</p>
             </div>
-            <figure class="shot"><img src="media/flow/demo-1.png" alt="老師佈置題目示範" loading="lazy"><figcaption>示範：評分標準選單與筆記預覽</figcaption></figure>
-          </div>
-          <div class="step-content" data-step="1">
-            <div class="step-text">
+            <div class="step-text" data-step="1" hidden>
               <h4>② 寫前引導</h4>
               <p>學生與 AI 寫作小助手對話，討論解題、選材、結構、修辭與升華，對話後生成寫作大綱。</p>
               <p class="gain">成效：動筆前已有清晰方向</p>
             </div>
-            <figure class="shot"><img src="media/flow/demo-2.png" alt="AI 小助手對話示範" loading="lazy"><figcaption>示範：與小助手討論大綱</figcaption></figure>
-          </div>
-          <div class="step-content" data-step="2">
-            <div class="step-text">
+            <div class="step-text" data-step="2" hidden>
               <h4>③ 落筆寫作</h4>
               <p>學生完成寫作後，用手機或平板拍照上載手寫作文（或由老師批量掃描上載）。</p>
               <p class="gain">成效：上載模式靈活</p>
             </div>
-            <figure class="shot"><img src="media/christmas_scan-1.png" alt="手寫作文原稿" loading="lazy"><figcaption>示範：手寫原稿掃描</figcaption></figure>
-          </div>
-          <div class="step-content" data-step="3">
-            <div class="step-text">
+            <div class="step-text" data-step="3" hidden>
               <h4>④ 轉成文字</h4>
               <p>平台自動辨識手寫文字，轉成可批改的電子文字，供老師與學生核對。</p>
               <p class="gain">成效：省去逐字輸入時間</p>
             </div>
-            <figure class="shot"><img src="media/flow/demo-4.png" alt="OCR 轉換示範" loading="lazy"><figcaption>示範：原稿與文字對照</figcaption></figure><div class="ocr-preview" style="font-size:12px;line-height:1.6;max-height:160px;overflow:auto;background:#fff;padding:8px;border-radius:6px">
-<p><b>《聖誕街景》</b></p>
-<p>「姐姐！你看，這棵聖誕樹多高……」弟弟興高采烈地指着希慎廣場裏那棵閃閃發光的聖誕樹。……（示範節錄）</p>
-</div>
-          </div>
-          <div class="step-content" data-step="4">
-            <div class="step-text">
+            <div class="step-text" data-step="4" hidden>
               <h4>⑤ 批改把關</h4>
               <p>AI 先分析並在原文加批註，老師再審閱、調整分數與評語，可自行加註，最後定稿發還學生。</p>
               <p class="gain">成效：批改不再是重擔，回饋質素更高</p>
             </div>
-            <figure class="shot"><img src="media/flow/demo-5.png" alt="批改與批註示範" loading="lazy"><figcaption>示範：原文批註與綜合評價</figcaption></figure><p style="font-size:12px;color:var(--ink-soft);margin:6px 0 0">綜合評價：緊扣主題，但疊詞較多，可提升詞彙豐富度。（示範）</p>
-          </div>
-          <div class="step-content" data-step="5">
-            <div class="step-text">
+            <div class="step-text" data-step="5" hidden>
               <h4>⑥ 跟進提升</h4>
               <p>老師查看全班跟進報告，AI 根據學情生成個人與班級修訂練習，安排再次寫作。</p>
               <p class="gain">成效：從數據看見進步，強化修改能力</p>
             </div>
-            <figure class="shot"><img src="media/flow/demo-6.png" alt="跟進報告示範" loading="lazy"><figcaption>示範：全班報告與個人練習</figcaption></figure>
           </div>
+        </div>
+
+        <div class="flow-right">
+          <figure class="shot" id="demoShot"><img src="media/flow/demo-1.png" alt="流程示範" loading="lazy"><figcaption id="demoCap">示範：評分標準選單與筆記預覽</figcaption></figure>
         </div>
       </div>
 
-      <div class="chal" id="guide">
+<div class="chal" id="guide">
         <h3 class="chal-h"><span>引導示例</span>無從下筆時，先從一個問題開始</h3>
         <p><strong><span class='proper-name'>智愛寫</span>的解決方案：</strong><br><span class='proper-name'>智愛寫</span>採用「邊寫邊學」的鷹架（Scaffolding）教學法，陪伴學生逐步深入題目。平台按題目自動生成教學建議，涵蓋關鍵字理解、失分提示、行文結構，為師生提供充足支援。</p>
         <p>透過提問及提示，協助學生理解題目、選材和安排結構。先選一個方向，看看它會怎樣追問。</p>
@@ -1377,10 +1369,16 @@ setTimeout(() => {
   const panels = document.querySelectorAll('.step-content');
   const status = document.getElementById('flowStatus');
   let current = 0;
+  const images = ["media/flow/demo-1.png","media/flow/demo-2.png","media/christmas_scan-1.png","media/flow/demo-4.png","media/flow/demo-5.png","media/flow/demo-6.png"];
+  const caps = ["示範：評分標準選單與筆記預覽","示範：與小助手討論大綱","示範：手寫原稿掃描","示範：原稿與文字對照","示範：原文批註與綜合評價","示範：全班報告與個人練習"];
   function go(i){
     current = i;
     btns.forEach((b,idx)=>{ b.setAttribute('aria-current', idx===i ? 'step' : 'false'); });
-    panels.forEach((p,idx)=>{ p.hidden = idx !== i; });
+    document.querySelectorAll('.step-text').forEach((p,idx)=>{ p.hidden = idx !== i; });
+    const shot = document.getElementById('demoShot');
+    if(shot){ shot.querySelector('img').src = images[i]; }
+    const cap = document.getElementById('demoCap');
+    if(cap) cap.textContent = caps[i];
     if(status) status.textContent = (i+1) + ' / 6：' + btns[i].textContent.trim();
   }
   btns.forEach(b => b.addEventListener('click', () => go(+b.dataset.step)));
