@@ -1381,8 +1381,8 @@ setTimeout(() => {
   const panels = document.querySelectorAll('.step-content');
   const status = document.getElementById('flowStatus');
   let current = 0;
-  const images = ["media/flow/step1-topic.png","media/flow/step2-chat.jpg","media/flow/step3-essay-1.jpg","media/flow/demo-4.png","media/flow/demo-5.png","media/flow/demo-6.png"];
-  const caps = ["示範：評分標準選單與筆記預覽","示範：與小助手討論大綱","示範：手寫原稿掃描","示範：原稿與文字對照","示範：原文批註與綜合評價","示範：全班報告與個人練習"];
+  const images = ["media/flow/step1-topic.png","media/flow/step2-chat.jpg","media/flow/step3-essay-1.jpg","media/flow/demo-4.png","media/flow/demo-5.png","media/flow/step6-practice.jpg"];
+  const caps = ["示範：評分標準選單與筆記預覽","示範：與小助手討論大綱","示範：手寫原稿","示範：OCR 轉換文字","示範：批改與批註","示範：跟進練習"];
   function go(i){
     current = i;
     btns.forEach((b,idx)=>{ b.setAttribute('aria-current', idx===i ? 'step' : 'false'); });
