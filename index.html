@@ -1392,53 +1392,85 @@ setTimeout(() => {
   btns.forEach(b => b.addEventListener('click', () => go(+b.dataset.step)));
   document.getElementById('playFlow').addEventListener('click', async () => {
     const btn = document.getElementById('playFlow');
+    const pauseBtn = document.getElementById('pauseFlow') || (function(){
+      const b = document.createElement('button');
+      b.id = 'pauseFlow';
+      b.className = 'btn ghost';
+      b.textContent = '暫停';
+      b.style.marginLeft = '8px';
+      btn.after(b);
+      return b;
+    })();
+    let paused = false;
+    pauseBtn.onclick = () => { paused = !paused; pauseBtn.textContent = paused ? '繼續' : '暫停'; };
     btn.disabled = true;
     btn.textContent = '播放中…';
     const shot = document.querySelector('.long-shot');
     const img = shot ? shot.querySelector('img') : null;
     if(img && shot){
       img.classList.add('animating');
-      // 1. zoom 2x to top-left (keep zoom)
       img.style.transformOrigin = '0 0';
-      img.style.transform = 'scale(2)';
-      await new Promise(r => setTimeout(r, 22400));
-      // 2. pan left to right (keep scale 2)
-      img.style.transform = 'scale(2) translateX(-40%)';
-      await new Promise(r => setTimeout(r, 22400));
-      // 3. back to center (keep scale 2)
+      img.style.transform = 'scale(1.5)';
+      // start pause
+      await sleep(1500);
+      // 1. pan left → right across top
+      await pan(img, 'translateX(0)', 'translateX(-40%)', 6000);
+      // 2. move to center
       img.style.transformOrigin = '50% 0';
-      img.style.transform = 'scale(2) translateX(0)';
-      await new Promise(r => setTimeout(r, 16000));
-      // 4. scroll down slowly
+      img.style.transform = 'scale(1.5) translateX(-15%)';
+      await sleep(800);
+      // 3. scroll down slowly, slow at key points
       const maxScroll = shot.scrollHeight - shot.clientHeight;
-      const start = Date.now();
-      const dur = 40000;
-      while(Date.now() - start < dur){
-        const p = (Date.now() - start) / dur;
-        shot.scrollTop = maxScroll * p;
-        await new Promise(r => setTimeout(r, 40));
+      const keys = [0.15, 0.35, 0.55, 0.75, 0.9];
+      let last = 0;
+      for(const k of keys){
+        const target = maxScroll * k;
+        await scrollTo(shot, last, target, 80, paused);
+        last = target;
+        await sleep(2000); // slow at key
       }
-      shot.scrollTop = maxScroll;
-      // 5. pan bottom-left to bottom-right (keep scale 2)
+      await scrollTo(shot, last, maxScroll, 80, paused);
+      // 4. pan left → right across bottom
       img.style.transformOrigin = '0 100%';
-      img.style.transform = 'scale(2) translateX(0)';
-      await new Promise(r => setTimeout(r, 12800));
-      img.style.transform = 'scale(2) translateX(-35%)';
-      await new Promise(r => setTimeout(r, 22400));
-      // reset
+      await pan(img, 'translateX(0)', 'translateX(-35%)', 6000);
+      // end pause
+      await sleep(1500);
       img.style.transform = '';
       img.style.transformOrigin = '';
       img.classList.remove('animating');
       shot.scrollTop = 0;
     }
-    // advance through remaining steps
     for(let i = 1; i < 6; i++){
       go(i);
-      await new Promise(r => setTimeout(r, 1600));
+      await sleep(1600);
     }
     btn.disabled = false;
     btn.textContent = '再次播放完整流程';
+    pauseBtn.remove();
   });
+  function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
+  async function pan(img, from, to, dur){
+    const start = Date.now();
+    while(Date.now() - start < dur){
+      const p = (Date.now() - start) / dur;
+      const t = from + (to.replace(/[^\d.-]/g,'') - from.replace(/[^\d.-]/g,'')) * p;
+      img.style.transform = 'scale(1.5) ' + (from.includes('translateX') ? 'translateX(' + t + '%)' : from);
+      await sleep(30);
+    }
+    img.style.transform = 'scale(1.5) ' + to;
+  }
+  async function scrollTo(el, from, to, speed, pausedRef){
+    const dist = to - from;
+    const dur = Math.abs(dist) / speed * 1000;
+    const start = Date.now();
+    while(Date.now() - start < dur){
+      if(pausedRef) await sleep(100);
+      const p = (Date.now() - start) / dur;
+      el.scrollTop = from + dist * p;
+      await sleep(30);
+    }
+    el.scrollTop = to;
+  }
   document.getElementById('resetFlow').addEventListener('click', () => go(0));
   go(0);
 })();
