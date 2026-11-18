@@ -1410,14 +1410,14 @@ setTimeout(() => {
     if(img && shot){
       img.classList.add('animating');
       img.style.transformOrigin = '0 0';
-      img.style.transform = 'scale(1.5)';
+      img.style.transform = 'scale(2)';
       // start pause
-      await sleep(1500);
+      await sleep(1000);
       // 1. pan left → right across top
-      await pan(img, 'translateX(0)', 'translateX(-40%)', 6000);
+      await pan(img, 'translateX(0)', 'translateX(-40%)', 4000);
       // 2. move to center
       img.style.transformOrigin = '50% 0';
-      img.style.transform = 'scale(1.5) translateX(-15%)';
+      img.style.transform = 'scale(2) translateX(-15%)';
       await sleep(800);
       // 3. scroll down slowly, slow at key points
       const maxScroll = shot.scrollHeight - shot.clientHeight;
@@ -1425,16 +1425,16 @@ setTimeout(() => {
       let last = 0;
       for(const k of keys){
         const target = maxScroll * k;
-        await scrollTo(shot, last, target, 80, paused);
+        await scrollTo(shot, last, target, 40, paused);
         last = target;
-        await sleep(2000); // slow at key
+        await sleep(1500); // slow at key
       }
-      await scrollTo(shot, last, maxScroll, 80, paused);
+      await scrollTo(shot, last, maxScroll, 40, paused);
       // 4. pan left → right across bottom
       img.style.transformOrigin = '0 100%';
-      await pan(img, 'translateX(0)', 'translateX(-35%)', 6000);
+      await pan(img, 'translateX(0)', 'translateX(-35%)', 4000);
       // end pause
-      await sleep(1500);
+      await sleep(1000);
       img.style.transform = '';
       img.style.transformOrigin = '';
       img.classList.remove('animating');
@@ -1454,10 +1454,10 @@ setTimeout(() => {
     while(Date.now() - start < dur){
       const p = (Date.now() - start) / dur;
       const t = from + (to.replace(/[^\d.-]/g,'') - from.replace(/[^\d.-]/g,'')) * p;
-      img.style.transform = 'scale(1.5) ' + (from.includes('translateX') ? 'translateX(' + t + '%)' : from);
+      img.style.transform = 'scale(2) ' + (from.includes('translateX') ? 'translateX(' + t + '%)' : from);
       await sleep(30);
     }
-    img.style.transform = 'scale(1.5) ' + to;
+    img.style.transform = 'scale(2) ' + to;
   }
   async function scrollTo(el, from, to, speed, pausedRef){
     const dist = to - from;
