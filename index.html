@@ -982,8 +982,12 @@ img[src*="avatar-s"] {
 
         <div class="flow-right">
           <div class="long-shot-wrap" id="demoShot">
-          <button type="button" class="long-shot" data-image="media/flow/step1-topic.png" aria-label="放大查看完整題目設定頁">
-            <img src="media/flow/step1-topic.png" alt="寫作題目設定頁" loading="lazy">
+          <div id="step2tabs" hidden style="display:flex;gap:8px;margin-bottom:8px">
+            <button type="button" class="btn" data-img="media/flow/step2-chat.jpg" style="background:#6B74D8;color:#fff;font-size:13px;padding:4px 12px">① 對話構思</button>
+            <button type="button" class="btn ghost" data-img="media/flow/step2-overview.jpg" style="font-size:13px;padding:4px 12px">② 六大功能</button>
+          </div>
+          <button type="button" class="long-shot" data-image="media/flow/step1-topic.png" aria-label="放大查看">
+            <img src="media/flow/step1-topic.png" alt="流程示範" loading="lazy">
           </button>
           <figcaption id="demoCap">示範：評分標準選單與筆記預覽 · 點擊放大</figcaption>
         </div>
@@ -1377,14 +1381,20 @@ setTimeout(() => {
   const panels = document.querySelectorAll('.step-content');
   const status = document.getElementById('flowStatus');
   let current = 0;
-  const images = ["media/flow/step1-topic.png","media/flow/demo-2.png","media/christmas_scan-1.png","media/flow/demo-4.png","media/flow/demo-5.png","media/flow/demo-6.png"];
+  const images = ["media/flow/step1-topic.png","media/flow/step2-chat.jpg","media/christmas_scan-1.png","media/flow/demo-4.png","media/flow/demo-5.png","media/flow/demo-6.png"];
   const caps = ["示範：評分標準選單與筆記預覽","示範：與小助手討論大綱","示範：手寫原稿掃描","示範：原稿與文字對照","示範：原文批註與綜合評價","示範：全班報告與個人練習"];
   function go(i){
     current = i;
     btns.forEach((b,idx)=>{ b.setAttribute('aria-current', idx===i ? 'step' : 'false'); });
     document.querySelectorAll('.step-text').forEach((p,idx)=>{ p.hidden = idx !== i; });
     const shot = document.getElementById('demoShot');
-    if(shot){ shot.querySelector('img').src = images[i]; }
+    if(shot){
+      const img = shot.querySelector('img');
+      if(img) img.src = images[i];
+      // step 2 tabs
+      const tabs = document.getElementById('step2tabs');
+      if(tabs) tabs.hidden = i !== 1;
+    }
     const cap = document.getElementById('demoCap');
     if(cap) cap.textContent = caps[i];
     if(status) status.textContent = (i+1) + ' / 6：' + btns[i].textContent.trim();
@@ -1448,6 +1458,18 @@ setTimeout(() => {
     btn.textContent = '再次播放完整流程';
     pauseBtn.remove();
   });
+  
+document.getElementById('step2tabs')?.addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if(!b) return;
+  const img = document.querySelector('.long-shot img');
+  if(img) img.src = b.dataset.img;
+  document.querySelectorAll('#step2tabs button').forEach(x => {
+    x.style.background = x === b ? '#6B74D8' : '';
+    x.style.color = x === b ? '#fff' : '';
+  });
+});
+
   function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
   async function pan(img, from, to, dur){
     const start = Date.now();
