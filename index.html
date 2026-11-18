@@ -211,6 +211,9 @@ footer a{color:#fff}
 @media (max-width: 768px) and (orientation: portrait) {
   .sec-nav { display: none !important; }
 }
+
+.long-shot img.animating{transition:transform 1.2s ease}
+.long-shot{overflow:hidden}
 </style>
 <link rel="stylesheet" href="experience.css?v=case2">
 <link rel="stylesheet" href="teaching-case.css?v=autoflow4">
@@ -1387,9 +1390,54 @@ setTimeout(() => {
     if(status) status.textContent = (i+1) + ' / 6：' + btns[i].textContent.trim();
   }
   btns.forEach(b => b.addEventListener('click', () => go(+b.dataset.step)));
-  document.getElementById('playFlow').addEventListener('click', () => {
-    let i = 0;
-    const t = setInterval(() => { go(i); i++; if(i>5) clearInterval(t); }, 1800);
+  document.getElementById('playFlow').addEventListener('click', async () => {
+    const btn = document.getElementById('playFlow');
+    btn.disabled = true;
+    btn.textContent = '播放中…';
+    const shot = document.querySelector('.long-shot');
+    const img = shot ? shot.querySelector('img') : null;
+    if(img && shot){
+      img.classList.add('animating');
+      // 1. zoom 2x to top-left
+      img.style.transformOrigin = '0 0';
+      img.style.transform = 'scale(2)';
+      await new Promise(r => setTimeout(r, 1400));
+      // 2. pan left to right
+      img.style.transform = 'scale(2) translateX(-40%)';
+      await new Promise(r => setTimeout(r, 1400));
+      // 3. back to center
+      img.style.transformOrigin = '50% 0';
+      img.style.transform = 'scale(1.6) translateX(0)';
+      await new Promise(r => setTimeout(r, 1000));
+      // 4. scroll down slowly
+      const maxScroll = shot.scrollHeight - shot.clientHeight;
+      const start = Date.now();
+      const dur = 2500;
+      while(Date.now() - start < dur){
+        const p = (Date.now() - start) / dur;
+        shot.scrollTop = maxScroll * p;
+        await new Promise(r => setTimeout(r, 30));
+      }
+      shot.scrollTop = maxScroll;
+      // 5. pan bottom-left to bottom-right
+      img.style.transformOrigin = '0 100%';
+      img.style.transform = 'scale(1.8) translateX(0)';
+      await new Promise(r => setTimeout(r, 800));
+      img.style.transform = 'scale(1.8) translateX(-35%)';
+      await new Promise(r => setTimeout(r, 1400));
+      // reset
+      img.style.transform = '';
+      img.style.transformOrigin = '';
+      img.classList.remove('animating');
+      shot.scrollTop = 0;
+    }
+    // advance through remaining steps
+    for(let i = 1; i < 6; i++){
+      go(i);
+      await new Promise(r => setTimeout(r, 1600));
+    }
+    btn.disabled = false;
+    btn.textContent = '再次播放完整流程';
   });
   document.getElementById('resetFlow').addEventListener('click', () => go(0));
   go(0);
