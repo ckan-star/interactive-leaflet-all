@@ -854,19 +854,6 @@ img[src*="avatar-s"] {
 }
 .step-text[hidden]{display:none}
 </style>
-
-<style>
-.flow6{list-style:none;margin:0;padding:0;display:flex;gap:8px}
-.flow6 button{display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:transparent;font-size:12px;color:var(--ink-soft);cursor:pointer;padding:0}
-.flow6 .num{width:36px;height:36px;border-radius:50%;background:#E8EAF6;color:#6B74D8;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
-.flow6 button[aria-current="step"] .num{background:#6B74D8;color:#fff}
-.flow6 button[aria-current="step"]{color:var(--ink);font-weight:600}
-.gain-pill{display:inline-block;background:#FFF4E6;color:#8a4b16;font-size:14px;padding:4px 12px;border-radius:20px}
-.step-text[hidden]{display:none}
-@media(max-width:800px){
-  #try > div:last-child{grid-template-columns:1fr !important}
-}
-</style>
 </head>
 <body>
 
@@ -940,54 +927,58 @@ img[src*="avatar-s"] {
     <div class="wrap">
       <div class="process-extras"><p class="eyebrow">先看平台怎樣支援寫作教學</p><h2 class="sec-h">從手寫上載，到回饋與寫作引導</h2><p class="section-intro" style="margin-top:-12px;font-size:14px;color:var(--ink-soft)">示範版・不用登入</p><p class="section-intro">先看作文如何轉成文字及回饋，再看看寫作前的引導方式。以下是預設示例。</p>
 
-      <div class="chal" id="try">
-        <div class="flow-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px">
-          <ol class="flow6" id="flow6" aria-label="六步寫作流程" style="margin:0;flex:1">
-            <li><button type="button" data-step="0" aria-current="step"><span class="num">1</span>出題</button></li>
-            <li><button type="button" data-step="1"><span class="num">2</span>寫前引導</button></li>
-            <li><button type="button" data-step="2"><span class="num">3</span>落筆寫作</button></li>
-            <li><button type="button" data-step="3"><span class="num">4</span>轉成文字</button></li>
-            <li><button type="button" data-step="4"><span class="num">5</span>批改把關</button></li>
-            <li><button type="button" data-step="5"><span class="num">6</span>跟進提升</button></li>
-          </ol>
-          <button type="button" class="btn" id="playFlow" style="flex-shrink:0">播放完整流程示範</button>
-        </div>
-        <p id="flowStatus" role="status" style="margin:0 0 20px;font-size:14px;color:var(--ink-soft)">1 / 6：出題</p>
+      <div class="chal" id="try" style="display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start">
+        <div class="flow-left">
+          <h3 class="chal-h"><span>流程示範</span>從出題到跟進的完整寫作流程</h3>
+          <p>老師佈置題目、學生與小助手構思、拍照上載、OCR 轉文字、老師批改定稿，再到跟進練習。以下為示範。</p>
 
-        <div style="display:grid;grid-template-columns:5fr 7fr;gap:48px;align-items:center">
+          <ol class="flow6" id="flow6" aria-label="六步寫作流程">
+            <li><button type="button" data-step="0" aria-current="step">① 出題</button></li>
+            <li><button type="button" data-step="1">② 寫前引導</button></li>
+            <li><button type="button" data-step="2">③ 落筆寫作</button></li>
+            <li><button type="button" data-step="3">④ 轉成文字</button></li>
+            <li><button type="button" data-step="4">⑤ 批改把關</button></li>
+            <li><button type="button" data-step="5">⑥ 跟進提升</button></li>
+          </ol>
+
+          <div class="demo-ctl"><button type="button" class="btn" id="playFlow">播放完整流程示範</button><button type="button" class="btn ghost" id="resetFlow" hidden>停止並重設</button><p id="flowStatus" role="status">按一次，逐步展示完整流程。</p></div>
+
           <div class="step-texts" id="stepTexts">
             <div class="step-text" data-step="0">
-              <h4 style="font-size:22px;margin:0 0 8px">出題</h4>
-              <p style="font-size:16px;line-height:1.8;margin:0 0 12px">老師選題或自訂題目，選擇評分標準（TSA／DSE／IGCSE／校本），AI 生成寫作筆記與圖片並派發給學生。</p>
-              <span class="gain-pill">成效：快速準備寫作指導材料</span>
+              <h4>① 出題</h4>
+              <p>老師選題或自訂題目，選擇評分標準（TSA／DSE／IGCSE／校本），AI 生成寫作筆記與圖片並派發給學生。</p>
+              <p class="gain">成效：快速準備寫作指導材料</p>
             </div>
             <div class="step-text" data-step="1" hidden>
-              <h4 style="font-size:22px;margin:0 0 8px">寫前引導</h4>
-              <p style="font-size:16px;line-height:1.8;margin:0 0 12px">學生與 AI 寫作小助手對話，討論解題、選材、結構、修辭與升華，對話後生成寫作大綱。</p>
-              <span class="gain-pill">成效：動筆前已有清晰方向</span>
+              <h4>② 寫前引導</h4>
+              <p>學生與 AI 寫作小助手對話，討論解題、選材、結構、修辭與升華，對話後生成寫作大綱。</p>
+              <p class="gain">成效：動筆前已有清晰方向</p>
             </div>
             <div class="step-text" data-step="2" hidden>
-              <h4 style="font-size:22px;margin:0 0 8px">落筆寫作</h4>
-              <p style="font-size:16px;line-height:1.8;margin:0 0 12px">學生完成寫作後，用手機或平板拍照上載手寫作文（或由老師批量掃描上載）。</p>
-              <span class="gain-pill">成效：上載模式靈活</span>
+              <h4>③ 落筆寫作</h4>
+              <p>學生完成寫作後，用手機或平板拍照上載手寫作文（或由老師批量掃描上載）。</p>
+              <p class="gain">成效：上載模式靈活</p>
             </div>
             <div class="step-text" data-step="3" hidden>
-              <h4 style="font-size:22px;margin:0 0 8px">轉成文字</h4>
-              <p style="font-size:16px;line-height:1.8;margin:0 0 12px">平台自動辨識手寫文字，轉成可批改的電子文字，供老師與學生核對。</p>
-              <span class="gain-pill">成效：省去逐字輸入時間</span>
+              <h4>④ 轉成文字</h4>
+              <p>平台自動辨識手寫文字，轉成可批改的電子文字，供老師與學生核對。</p>
+              <p class="gain">成效：省去逐字輸入時間</p>
             </div>
             <div class="step-text" data-step="4" hidden>
-              <h4 style="font-size:22px;margin:0 0 8px">批改把關</h4>
-              <p style="font-size:16px;line-height:1.8;margin:0 0 12px">AI 先分析並在原文加批註，老師再審閱、調整分數與評語，可自行加註，最後定稿發還學生。</p>
-              <span class="gain-pill">成效：批改不再是重擔，回饋質素更高</span>
+              <h4>⑤ 批改把關</h4>
+              <p>AI 先分析並在原文加批註，老師再審閱、調整分數與評語，可自行加註，最後定稿發還學生。</p>
+              <p class="gain">成效：批改不再是重擔，回饋質素更高</p>
             </div>
             <div class="step-text" data-step="5" hidden>
-              <h4 style="font-size:22px;margin:0 0 8px">跟進提升</h4>
-              <p style="font-size:16px;line-height:1.8;margin:0 0 12px">老師查看全班跟進報告，AI 根據學情生成個人與班級修訂練習，安排再次寫作。</p>
-              <span class="gain-pill">成效：從數據看見進步，強化修改能力</span>
+              <h4>⑥ 跟進提升</h4>
+              <p>老師查看全班跟進報告，AI 根據學情生成個人與班級修訂練習，安排再次寫作。</p>
+              <p class="gain">成效：從數據看見進步，強化修改能力</p>
             </div>
           </div>
-          <figure class="shot" id="demoShot" style="margin:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08)"><img src="media/flow/demo-1.png" alt="流程示範" loading="lazy" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block"><figcaption id="demoCap" style="font-size:13px;color:var(--ink-soft);padding:10px;text-align:center;background:#fff">示範：評分標準選單與筆記預覽</figcaption></figure>
+        </div>
+
+        <div class="flow-right">
+          <figure class="shot" id="demoShot"><img src="media/flow/demo-1.png" alt="流程示範" loading="lazy"><figcaption id="demoCap">示範：評分標準選單與筆記預覽</figcaption></figure>
         </div>
       </div>
 
