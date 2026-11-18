@@ -989,7 +989,13 @@ img[src*="avatar-s"] {
           <button type="button" class="long-shot" data-image="media/flow/step1-topic.png" aria-label="放大查看">
             <img src="media/flow/step1-topic.png" alt="流程示範" loading="lazy">
           </button>
-          <figcaption id="demoCap">示範：評分標準選單與筆記預覽 · 點擊放大</figcaption>
+          <div class="ocr-box" id="ocrBox" hidden style="max-height:420px;overflow:auto;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:16px;font-size:14px;line-height:1.8">
+<p><b>《聖誕街景》</b></p>
+<p>「姐姐！你看，這棵聖誕樹多高，簡直可以穿過雲層！」弟弟興高采烈地指着希慎廣場裏那棵閃閃發光的聖誕樹。廣場門口立着一棵聖誕樹，彷彿迎接我們的來臨。五顏六色的裝飾在深綠的樹葉特別顯眼。除此之外，樹的頂部還插着一顆發光的小星星。</p>
+<p>望向左邊，有一支聖誕合唱團在唱着輕快的音樂。他們身穿紅衣、頭戴紅帽，連鞋子也是紅色的。歌曲唱完了，雷鳴般的掌聲響滿廣場。合唱團的旁邊有一個小丑幫小朋友們扭氣球，這邊一隻小兔子，那邊一隻貓，把平平無奇的氣球扭成栩栩如生的小動物，真是令我大開眼界。</p>
+<p>右邊的美食攤擋傳來一陣香香的雞蛋仔香味。仔細一看，嘩！不但有裝飾華麗的聖誕曲奇餅，還有從日本北海道直送來香港的新鮮牛乳。售貨員熱情地遞我一塊小餅乾試試，餅乾脆脆的，上面有一層甜甜的奶油，真好吃！</p>
+<p>接着那幾個小時，我們都是這邊走走，那邊逛逛。時間也過得真快，轉眼間，已經九點半了，我們也得走了，我依依不捨地抬頭凝視掛在廣場透明的玻璃頂的奪目燈飾，它們一閃一閃的，我想，它們應該象徵着每個人來年的盼望吧！</p>
+</div><figcaption id="demoCap">示範：評分標準選單與筆記預覽 · 點擊放大</figcaption>
         </div>
         </div>
       </div>
@@ -1394,6 +1400,10 @@ setTimeout(() => {
       // step 2 tabs
       const tabs = document.getElementById('step2tabs');
       if(tabs) tabs.hidden = i !== 1;
+      const ocr = document.getElementById('ocrBox');
+      if(ocr) ocr.hidden = i !== 3;
+      const ls = shot.querySelector('.long-shot');
+      if(ls) ls.hidden = i === 3;
     }
     const cap = document.getElementById('demoCap');
     if(cap) cap.textContent = caps[i];
