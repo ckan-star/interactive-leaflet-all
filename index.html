@@ -1398,33 +1398,33 @@ setTimeout(() => {
     const img = shot ? shot.querySelector('img') : null;
     if(img && shot){
       img.classList.add('animating');
-      // 1. zoom 2x to top-left
+      // 1. zoom 2x to top-left (keep zoom)
       img.style.transformOrigin = '0 0';
       img.style.transform = 'scale(2)';
-      await new Promise(r => setTimeout(r, 1400));
-      // 2. pan left to right
+      await new Promise(r => setTimeout(r, 5600));
+      // 2. pan left to right (keep scale 2)
       img.style.transform = 'scale(2) translateX(-40%)';
-      await new Promise(r => setTimeout(r, 1400));
-      // 3. back to center
+      await new Promise(r => setTimeout(r, 5600));
+      // 3. back to center (keep scale 2)
       img.style.transformOrigin = '50% 0';
-      img.style.transform = 'scale(1.6) translateX(0)';
-      await new Promise(r => setTimeout(r, 1000));
+      img.style.transform = 'scale(2) translateX(0)';
+      await new Promise(r => setTimeout(r, 4000));
       // 4. scroll down slowly
       const maxScroll = shot.scrollHeight - shot.clientHeight;
       const start = Date.now();
-      const dur = 2500;
+      const dur = 10000;
       while(Date.now() - start < dur){
         const p = (Date.now() - start) / dur;
         shot.scrollTop = maxScroll * p;
-        await new Promise(r => setTimeout(r, 30));
+        await new Promise(r => setTimeout(r, 40));
       }
       shot.scrollTop = maxScroll;
-      // 5. pan bottom-left to bottom-right
+      // 5. pan bottom-left to bottom-right (keep scale 2)
       img.style.transformOrigin = '0 100%';
-      img.style.transform = 'scale(1.8) translateX(0)';
-      await new Promise(r => setTimeout(r, 800));
-      img.style.transform = 'scale(1.8) translateX(-35%)';
-      await new Promise(r => setTimeout(r, 1400));
+      img.style.transform = 'scale(2) translateX(0)';
+      await new Promise(r => setTimeout(r, 3200));
+      img.style.transform = 'scale(2) translateX(-35%)';
+      await new Promise(r => setTimeout(r, 5600));
       // reset
       img.style.transform = '';
       img.style.transformOrigin = '';
