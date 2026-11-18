@@ -854,6 +854,14 @@ img[src*="avatar-s"] {
 }
 .step-text[hidden]{display:none}
 </style>
+
+<style>
+.long-shot-wrap{position:relative}
+.long-shot{display:block;max-height:420px;overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--rule);border-radius:12px;padding:0;cursor:zoom-in;background:#fff;width:100%}
+.long-shot img{display:block;width:100%;height:auto}
+.long-shot-wrap::after{content:"↓ 向下捲動";position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--ink-soft);background:rgba(255,255,255,.9);padding:2px 8px;border-radius:4px;pointer-events:none}
+@media(max-width:640px){.long-shot{max-height:60vh}}
+</style>
 </head>
 <body>
 
@@ -970,7 +978,12 @@ img[src*="avatar-s"] {
         </div>
 
         <div class="flow-right">
-          <figure class="shot" id="demoShot"><img src="media/flow/demo-1.png" alt="流程示範" loading="lazy"><figcaption id="demoCap">示範：評分標準選單與筆記預覽</figcaption></figure>
+          <div class="long-shot-wrap" id="demoShot">
+          <button type="button" class="long-shot" data-image="media/flow/step1-topic.png" aria-label="放大查看完整題目設定頁">
+            <img src="media/flow/step1-topic.png" alt="寫作題目設定頁" loading="lazy">
+          </button>
+          <figcaption id="demoCap">示範：評分標準選單與筆記預覽 · 點擊放大</figcaption>
+        </div>
         </div>
       </div>
 
@@ -1361,7 +1374,7 @@ setTimeout(() => {
   const panels = document.querySelectorAll('.step-content');
   const status = document.getElementById('flowStatus');
   let current = 0;
-  const images = ["media/flow/demo-1.png","media/flow/demo-2.png","media/christmas_scan-1.png","media/flow/demo-4.png","media/flow/demo-5.png","media/flow/demo-6.png"];
+  const images = ["media/flow/step1-topic.png","media/flow/demo-2.png","media/christmas_scan-1.png","media/flow/demo-4.png","media/flow/demo-5.png","media/flow/demo-6.png"];
   const caps = ["示範：評分標準選單與筆記預覽","示範：與小助手討論大綱","示範：手寫原稿掃描","示範：原稿與文字對照","示範：原文批註與綜合評價","示範：全班報告與個人練習"];
   function go(i){
     current = i;
