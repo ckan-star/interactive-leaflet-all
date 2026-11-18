@@ -1401,18 +1401,18 @@ setTimeout(() => {
       // 1. zoom 2x to top-left (keep zoom)
       img.style.transformOrigin = '0 0';
       img.style.transform = 'scale(2)';
-      await new Promise(r => setTimeout(r, 5600));
+      await new Promise(r => setTimeout(r, 22400));
       // 2. pan left to right (keep scale 2)
       img.style.transform = 'scale(2) translateX(-40%)';
-      await new Promise(r => setTimeout(r, 5600));
+      await new Promise(r => setTimeout(r, 22400));
       // 3. back to center (keep scale 2)
       img.style.transformOrigin = '50% 0';
       img.style.transform = 'scale(2) translateX(0)';
-      await new Promise(r => setTimeout(r, 4000));
+      await new Promise(r => setTimeout(r, 16000));
       // 4. scroll down slowly
       const maxScroll = shot.scrollHeight - shot.clientHeight;
       const start = Date.now();
-      const dur = 10000;
+      const dur = 40000;
       while(Date.now() - start < dur){
         const p = (Date.now() - start) / dur;
         shot.scrollTop = maxScroll * p;
@@ -1422,9 +1422,9 @@ setTimeout(() => {
       // 5. pan bottom-left to bottom-right (keep scale 2)
       img.style.transformOrigin = '0 100%';
       img.style.transform = 'scale(2) translateX(0)';
-      await new Promise(r => setTimeout(r, 3200));
+      await new Promise(r => setTimeout(r, 12800));
       img.style.transform = 'scale(2) translateX(-35%)';
-      await new Promise(r => setTimeout(r, 5600));
+      await new Promise(r => setTimeout(r, 22400));
       // reset
       img.style.transform = '';
       img.style.transformOrigin = '';
